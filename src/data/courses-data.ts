@@ -1,0 +1,107 @@
+export const ALL_COURSES = [
+  {
+    id: 1, cat: "English", sub: "General", level: "Intermediate",
+    title: "Business English Mastery",
+    desc: "Master professional communication for career advancement. Learn to write emails, lead meetings, negotiate deals, and present ideas confidently in English.",
+    weeks: 12, price: "฿12,900", originalPrice: "฿16,900",
+    img: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=600&q=80",
+    lessons: 48, students: 320, rating: 4.9, reviewCount: 128,
+    language: "Thai/English",
+    highlights: [
+      "Write professional emails and reports",
+      "Lead meetings and presentations confidently",
+      "Negotiate and persuade in English",
+      "Master business vocabulary and idioms",
+      "TOEIC Business score boost",
+    ],
+    curriculum: [
+      { week: "Week 1-2", title: "Professional Email Writing", lessons: 8, desc: "Structure, tone, and vocabulary for business emails" },
+      { week: "Week 3-4", title: "Meeting & Presentation Skills", lessons: 8, desc: "How to lead, participate, and present effectively" },
+      { week: "Week 5-6", title: "Negotiation & Persuasion", lessons: 8, desc: "Language techniques for deals and discussions" },
+      { week: "Week 7-8", title: "Business Vocabulary Deep Dive", lessons: 8, desc: "Industry-specific terms and phrases" },
+      { week: "Week 9-10", title: "Report & Proposal Writing", lessons: 8, desc: "Formal documents for professional settings" },
+      { week: "Week 11-12", title: "Final Project & Mock Scenarios", lessons: 8, desc: "Real-world simulations and feedback" },
+    ],
+    instructor: {
+      name: "Ajarn Sarah Mitchell", title: "Native English Instructor, MBA",
+      exp: "10+ years", students: 1200, rating: 4.9,
+      bio: "Sarah is a certified English instructor with an MBA from the University of Melbourne. She has trained professionals at top Thai corporations including SCB, PTT, and AIS.",
+      img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80",
+    },
+    reviewsList: [
+      { name: "Kittipong S.", result: "Got promoted after 3 months", rating: 5, text: "This course completely changed how I communicate at work.", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&q=80" },
+      { name: "Praewa T.", result: "Passed TOEIC 850", rating: 5, text: "The business vocabulary section is gold. I use these phrases every day.", img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=60&q=80" },
+      { name: "Natthapong K.", result: "Landed international job", rating: 5, text: "Sarah's teaching style is clear and practical. Worth every baht!", img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=60&q=80" },
+    ],
+    plans: [
+      { name: "Self-Paced", price: "฿12,900", features: ["48 video lessons", "Lifetime access", "Certificate of completion", "Community access"], highlight: false },
+      { name: "Guided", price: "฿18,900", features: ["Everything in Self-Paced", "Weekly live Q&A", "Instructor feedback", "Priority support"], highlight: true },
+      { name: "Premium", price: "฿24,900", features: ["Everything in Guided", "1-on-1 coaching (3 sessions)", "Resume review", "Mock interview"], highlight: false },
+    ],
+  },
+  {
+    id: 2, cat: "English", sub: "General", level: "Beginner",
+    title: "Everyday English",
+    desc: "Build confidence in daily conversations and situations. Perfect for beginners who want to communicate naturally in English.",
+    weeks: 8, price: "฿1,490", originalPrice: "฿2,490",
+    img: "https://images.unsplash.com/photo-1543269865-cbf427effbad?w=600&q=80",
+    lessons: 32, students: 540, rating: 4.8, reviewCount: 210,
+    language: "Thai/English",
+    highlights: ["Hold basic conversations", "Understand everyday vocabulary", "Build listening skills", "Gain speaking confidence"],
+    curriculum: [
+      { week: "Week 1-2", title: "Greetings & Introductions", lessons: 8, desc: "First steps in English communication" },
+      { week: "Week 3-4", title: "Daily Life Vocabulary", lessons: 8, desc: "Food, shopping, transport, and more" },
+      { week: "Week 5-6", title: "Asking & Answering Questions", lessons: 8, desc: "Question forms and natural responses" },
+      { week: "Week 7-8", title: "Real-Life Practice", lessons: 8, desc: "Simulated conversations and review" },
+    ],
+    instructor: {
+      name: "Ajarn Sarah Mitchell", title: "Native English Instructor, MBA",
+      exp: "10+ years", students: 1200, rating: 4.9,
+      bio: "Sarah is a certified English instructor with an MBA from the University of Melbourne.",
+      img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80",
+    },
+    reviewsList: [
+      { name: "Malee S.", result: "Can now talk to foreigners!", rating: 5, text: "I was so shy before this course. Now I can hold a basic conversation!", img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=60&q=80" },
+      { name: "Somchai P.", result: "Great foundation", rating: 5, text: "Perfect starting point. Clear explanations in Thai and English.", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&q=80" },
+    ],
+    plans: [
+      { name: "Self-Paced", price: "฿1,490", features: ["32 video lessons", "Lifetime access", "Certificate of completion", "Community access"], highlight: false },
+      { name: "Guided", price: "฿2,990", features: ["Everything in Self-Paced", "Weekly live Q&A", "Instructor feedback"], highlight: true },
+      { name: "Premium", price: "฿4,990", features: ["Everything in Guided", "1-on-1 coaching (2 sessions)", "Speaking assessment"], highlight: false },
+    ],
+  },
+  {
+    id: 13, cat: "Coding", sub: "Adult", level: "Beginner",
+    title: "Python for Automation",
+    desc: "Automate repetitive tasks and boost productivity with Python. No coding experience required.",
+    weeks: 10, price: "฿4,990", originalPrice: "฿6,990",
+    img: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600&q=80",
+    lessons: 40, students: 280, rating: 4.9, reviewCount: 95,
+    language: "Thai",
+    highlights: ["Automate Excel and files", "Write Python scripts from scratch", "Build bots and schedulers", "Save hours of manual work"],
+    curriculum: [
+      { week: "Week 1-2", title: "Python Basics", lessons: 8, desc: "Variables, loops, and functions" },
+      { week: "Week 3-4", title: "File & Excel Automation", lessons: 8, desc: "Read, write, and process files automatically" },
+      { week: "Week 5-6", title: "Web Scraping", lessons: 8, desc: "Extract data from websites" },
+      { week: "Week 7-8", title: "Scheduling & Bots", lessons: 8, desc: "Run scripts automatically" },
+      { week: "Week 9-10", title: "Final Project", lessons: 8, desc: "Build your own automation tool" },
+    ],
+    instructor: {
+      name: "Ajarn Mark Chen", title: "Senior Software Engineer",
+      exp: "8+ years", students: 850, rating: 4.9,
+      bio: "Mark is a software engineer with 8 years of experience at tech companies in Thailand and Singapore.",
+      img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80",
+    },
+    reviewsList: [
+      { name: "Nattida K.", result: "Saved 3 hours/day at work", rating: 5, text: "I automated my Excel reports. My manager was amazed!", img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=60&q=80" },
+      { name: "Pong T.", result: "Got a raise", rating: 5, text: "Best investment I ever made. Python skills opened so many doors.", img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=60&q=80" },
+    ],
+    plans: [
+      { name: "Self-Paced", price: "฿4,990", features: ["40 video lessons", "Lifetime access", "Certificate", "Community"], highlight: false },
+      { name: "Guided", price: "฿7,900", features: ["Everything in Self-Paced", "Weekly Q&A", "Code review", "Priority support"], highlight: true },
+      { name: "Premium", price: "฿11,900", features: ["Everything in Guided", "1-on-1 sessions (3x)", "Portfolio project", "Job referral"], highlight: false },
+    ],
+  },
+];
+
+export type Course = typeof ALL_COURSES[0];

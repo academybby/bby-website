@@ -86,7 +86,7 @@ export default function LandingPage() {
                   </div>
                   <div className="course-foot">
                     <span className="course-price">{course.price}</span>
-                    <Link to="/courses" className="btn-gold-sm">View Details →</Link>
+                    <Link to={`/courses/${course.id}`} className="btn-gold-sm">View Details →</Link>
                   </div>
                 </div>
               </div>
@@ -177,41 +177,6 @@ export default function LandingPage() {
           <button className="btn-outline-pill">💬 Chat on LINE</button>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="footer">
-        <div className="footer-inner">
-          <div className="footer-brand">
-            <div className="nav-logo">BBY academy</div>
-            <p>Transform your future through premium education</p>
-            <div className="social-row">
-              {["FB", "IG", "X", "LI", "YT"].map((s, i) => <a key={i} href="#" className="social-btn">{s}</a>)}
-            </div>
-          </div>
-          <div className="footer-col">
-            <h4>Quick Links</h4>
-            <Link to="/courses">Courses</Link>
-            <Link to="/community">Community</Link>
-            <Link to="/coaching">Coaching</Link>
-            <Link to="/certifications">Certifications</Link>
-            <Link to="/contact">Contact</Link>
-          </div>
-          <div className="footer-col">
-            <h4>Legal</h4>
-            {["Privacy Policy", "Terms of Service", "Refund Policy"].map((l, i) => <a key={i} href="#">{l}</a>)}
-          </div>
-          <div className="footer-col">
-            <h4>Contact Us</h4>
-            <a href="#">✉ hello@bbyacademy.com</a>
-            <a href="#">📞 +66 2 123 4567</a>
-            <a href="#">📍 Chiang Mai, Thailand</a>
-          </div>
-        </div>
-        <div className="footer-bottom">
-          <span>© 2026 BBY academy. All rights reserved.</span>
-          <span>Empowering learners worldwide.</span>
-        </div>
-      </footer>
     </div>
   );
 }
