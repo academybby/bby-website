@@ -1,0 +1,160 @@
+.enroll {
+  color: var(--text, #F0EDE4);
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg, #0D0C0A);
+  min-height: 100vh;
+}
+.gold { color: #D4A843; }
+
+/* ── Hero ── */
+.enroll-hero {
+  background: linear-gradient(135deg, #0D0C0A 0%, #1A1410 60%, #221810 100%);
+  padding: 4rem 2.5rem 3rem;
+  border-bottom: 1px solid rgba(212,168,67,0.12);
+}
+.enroll-hero-inner { max-width: 1100px; margin: 0 auto; }
+.enroll-breadcrumb { font-size: 0.8rem; color: var(--muted, #7A7468); margin-bottom: 1.25rem; }
+.enroll-breadcrumb a { color: #D4A843; text-decoration: none; }
+.enroll-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem; font-weight: 700;
+  color: var(--text, #F0EDE4); margin-bottom: 0.75rem; line-height: 1.2;
+}
+.enroll-hero p { font-size: 0.95rem; color: var(--muted, #7A7468); font-weight: 300; }
+
+/* ── Main ── */
+.enroll-main { padding: 3rem 2.5rem 5rem; }
+.enroll-main-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 360px; gap: 2rem;
+  align-items: start;
+}
+
+/* ── Form ── */
+.enroll-form { display: flex; flex-direction: column; gap: 1.25rem; }
+.enroll-card {
+  background: var(--card-bg, #1A1816);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 16px; padding: 1.75rem;
+}
+.enroll-card h2 {
+  font-size: 1.05rem; font-weight: 700;
+  color: var(--text, #F0EDE4); margin-bottom: 1.25rem;
+}
+.enroll-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.25rem; }
+.enroll-row:last-child { margin-bottom: 0; }
+.enroll-field { display: flex; flex-direction: column; gap: 0.4rem; }
+.enroll-field label { font-size: 0.82rem; font-weight: 500; color: var(--text, #F0EDE4); }
+.enroll-field input,
+.enroll-card textarea {
+  background: var(--bg3, #1A1816); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px; padding: 0.75rem 1rem;
+  color: var(--text, #F0EDE4); font-size: 0.88rem;
+  font-family: 'DM Sans', sans-serif; outline: none; transition: border-color 0.2s;
+  width: 100%; resize: none;
+}
+.enroll-field input:focus, .enroll-card textarea:focus { border-color: rgba(212,168,67,0.5); }
+.enroll-field input::placeholder, .enroll-card textarea::placeholder { color: var(--muted, #7A7468); }
+.enroll-label-block { display: block; font-size: 0.82rem; font-weight: 500; color: var(--text, #F0EDE4); margin-bottom: 0.6rem; }
+
+/* Plan Options */
+.enroll-plans { display: flex; flex-direction: column; gap: 0.75rem; }
+.enroll-plan-option {
+  position: relative;
+  display: flex; align-items: center; gap: 1rem;
+  background: var(--bg3, #1A1816); border: 1.5px solid rgba(255,255,255,0.08);
+  border-radius: 12px; padding: 1rem 1.25rem; cursor: pointer;
+  transition: all 0.2s;
+}
+.enroll-plan-option:hover { border-color: rgba(212,168,67,0.3); }
+.enroll-plan-option.selected { border-color: #D4A843; background: rgba(212,168,67,0.06); }
+.enroll-plan-badge {
+  position: absolute; top: -10px; left: 1rem;
+  background: #D4A843; color: #0D0C0A;
+  font-size: 0.65rem; font-weight: 700;
+  padding: 0.15rem 0.6rem; border-radius: 999px;
+}
+.enroll-plan-radio {
+  width: 20px; height: 20px; border-radius: 50%;
+  border: 2px solid rgba(212,168,67,0.4);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.enroll-plan-dot { width: 10px; height: 10px; border-radius: 50%; background: #D4A843; }
+.enroll-plan-info { flex: 1; }
+.enroll-plan-name { font-size: 0.92rem; font-weight: 600; color: var(--text, #F0EDE4); }
+.enroll-plan-features { font-size: 0.76rem; color: var(--muted, #7A7468); margin-top: 2px; }
+.enroll-plan-price { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: #D4A843; white-space: nowrap; }
+
+/* Payment Options */
+.enroll-payment-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+.enroll-payment-option {
+  display: flex; align-items: center; gap: 0.75rem;
+  background: var(--bg3, #1A1816); border: 1.5px solid rgba(255,255,255,0.08);
+  border-radius: 10px; padding: 0.85rem 1rem; cursor: pointer;
+  font-size: 0.86rem; color: var(--text, #F0EDE4);
+  transition: all 0.2s;
+}
+.enroll-payment-option:hover { border-color: rgba(212,168,67,0.3); }
+.enroll-payment-option.selected { border-color: #D4A843; background: rgba(212,168,67,0.06); }
+
+/* Agree checkbox */
+.enroll-agree {
+  display: flex; align-items: flex-start; gap: 0.75rem;
+  font-size: 0.84rem; color: var(--muted, #7A7468); cursor: pointer;
+  padding: 0 0.25rem;
+}
+.enroll-agree input { margin-top: 0.2rem; accent-color: #D4A843; cursor: pointer; }
+
+.enroll-submit {
+  width: 100%; padding: 1rem; font-size: 1rem;
+}
+.enroll-submit:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* ── Summary Sidebar ── */
+.enroll-summary-card {
+  background: var(--card-bg, #1A1816);
+  border: 1px solid rgba(212,168,67,0.2);
+  border-radius: 16px; padding: 1.75rem;
+  position: sticky; top: 90px;
+}
+.enroll-summary-card h3 { font-size: 0.95rem; font-weight: 700; color: var(--text, #F0EDE4); margin-bottom: 1rem; }
+.enroll-summary-img { width: 100%; height: 140px; object-fit: cover; border-radius: 10px; margin-bottom: 1rem; }
+.enroll-summary-title { font-size: 1rem; font-weight: 700; color: var(--text, #F0EDE4); margin-bottom: 0.6rem; line-height: 1.4; }
+.enroll-summary-meta { display: flex; gap: 1rem; font-size: 0.78rem; color: var(--muted, #7A7468); margin-bottom: 1rem; }
+.enroll-divider { border: none; border-top: 1px solid rgba(255,255,255,0.07); margin: 1rem 0; }
+.enroll-summary-row { display: flex; justify-content: space-between; align-items: center; font-size: 0.86rem; color: var(--muted, #7A7468); }
+.enroll-summary-row strong { color: var(--text, #F0EDE4); }
+.enroll-summary-total { display: flex; justify-content: space-between; align-items: center; font-size: 0.95rem; font-weight: 600; color: var(--text, #F0EDE4); }
+.enroll-total-price { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: #D4A843; }
+
+/* ── Success ── */
+.enroll-success {
+  max-width: 560px; margin: 0 auto; padding: 6rem 2.5rem; text-align: center;
+}
+.success-icon { font-size: 4rem; margin-bottom: 1.5rem; }
+.enroll-success h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem; font-weight: 700;
+  color: var(--text, #F0EDE4); margin-bottom: 1rem;
+}
+.enroll-success > p { font-size: 0.95rem; color: var(--muted, #7A7468); line-height: 1.7; margin-bottom: 2rem; }
+.success-summary {
+  background: var(--card-bg, #1A1816); border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 16px; padding: 1.5rem; margin-bottom: 2rem; text-align: left;
+}
+.success-row { display: flex; justify-content: space-between; padding: 0.6rem 0; font-size: 0.88rem; color: var(--muted, #7A7468); }
+.success-row strong { color: var(--text, #F0EDE4); }
+.success-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+/* Shared buttons */
+.btn-gold { background: #D4A843; color: #0D0C0A; border: none; padding: 0.85rem 2rem; border-radius: 999px; font-size: 0.95rem; font-weight: 600; cursor: pointer; font-family: inherit; transition: background 0.2s, transform 0.15s; display: inline-block; text-decoration: none; }
+.btn-gold:hover { background: #F0C85A; transform: translateY(-1px); }
+.btn-outline-pill { background: transparent; color: var(--text, #F0EDE4); border: 1.5px solid #D4A843; padding: 0.85rem 2rem; border-radius: 999px; font-size: 0.95rem; font-weight: 500; cursor: pointer; font-family: inherit; transition: all 0.2s; display: inline-block; text-decoration: none; }
+.btn-outline-pill:hover { background: rgba(212,168,67,0.1); }
+
+@media (max-width: 900px) {
+  .enroll-main-inner { grid-template-columns: 1fr; }
+  .enroll-row { grid-template-columns: 1fr; }
+  .enroll-payment-grid { grid-template-columns: 1fr; }
+}
