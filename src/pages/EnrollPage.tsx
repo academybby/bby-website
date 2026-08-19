@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useParams, useSearchParams, Link, useNavigate } from "react-router-dom";
 import { ALL_COURSES } from "../data/courses-data";
 import { useLang } from "../context/LanguageContext";
+import { useEnrollment } from "../context/EnrollmentContext";
 
 const TEXT = {
   EN: {
@@ -22,13 +23,7 @@ const TEXT = {
     notes: "Additional Notes (optional)",
     notes_ph: "Any questions or special requests?",
     agree: "I agree to the Terms of Service and Privacy Policy",
-    submit_btn: "Complete Enrollment →",
-    success_title: "Enrollment Submitted!",
-    success_sub: "Thank you for enrolling! Our team will contact you within 24 hours to confirm payment and course access.",
-    success_course: "Course",
-    success_plan: "Plan",
-    back_home: "Back to Home",
-    view_courses: "Browse More Courses",
+    submit_btn: "Continue to Payment →",
     plans_label: "Select Your Plan",
     most_popular: "Most Popular",
     order_total: "Total",
@@ -50,13 +45,7 @@ const TEXT = {
     notes: "หมายเหตุเพิ่มเติม (ไม่บังคับ)",
     notes_ph: "มีคำถามหรือคำขอพิเศษไหม?",
     agree: "ฉันยอมรับข้อกำหนดการใช้บริการและนโยบายความเป็นส่วนตัว",
-    submit_btn: "ยืนยันการสมัครเรียน →",
-    success_title: "ส่งคำขอสมัครเรียนแล้ว!",
-    success_sub: "ขอบคุณที่สมัครเรียน! ทีมงานจะติดต่อกลับภายใน 24 ชั่วโมงเพื่อยืนยันการชำระเงินและสิทธิ์เข้าเรียน",
-    success_course: "หลักสูตร",
-    success_plan: "แผน",
-    back_home: "กลับหน้าหลัก",
-    view_courses: "ดูหลักสูตรอื่นๆ",
+    submit_btn: "ไปที่การชำระเงิน →",
     plans_label: "เลือกแผนของคุณ",
     most_popular: "ยอดนิยม",
     order_total: "ยอดรวม",
@@ -69,41 +58,22 @@ export default function EnrollPage() {
   const navigate = useNavigate();
   const { lang } = useLang();
   const tx = TEXT[lang];
+  const { setEmail } = useEnrollment();
 
   const course = ALL_COURSES.find(c => c.id === Number(id)) || ALL_COURSES[0];
   const initialPlanIdx = course.plans.findIndex(p => p.name === searchParams.get("plan"));
   const [planIdx, setPlanIdx] = useState(initialPlanIdx >= 0 ? initialPlanIdx : course.plans.findIndex(p => p.highlight) >= 0 ? course.plans.findIndex(p => p.highlight) : 0);
 
   const [form, setForm] = useState({ name: "", email: "", phone: "", lineId: "", notes: "", payment: 0, agree: false });
-  const [submitted, setSubmitted] = useState(false);
 
   const selectedPlan = course.plans[planIdx];
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.agree) return;
-    setSubmitted(true);
+    setEmail(form.email);
+    navigate(`/courses/${course.id}/payment`, { state: { planIdx, form } });
   };
-
-  if (submitted) {
-    return (
-      <div className="enroll">
-        <section className="enroll-success">
-          <div className="success-icon">🎉</div>
-          <h1>{tx.success_title}</h1>
-          <p>{tx.success_sub}</p>
-          <div className="success-summary">
-            <div className="success-row"><span>{tx.success_course}</span><strong>{course.title}</strong></div>
-            <div className="success-row"><span>{tx.success_plan}</span><strong>{selectedPlan.name} — {selectedPlan.price}</strong></div>
-          </div>
-          <div className="success-btns">
-            <Link to="/" className="btn-outline-pill">{tx.back_home}</Link>
-            <Link to="/courses" className="btn-gold">{tx.view_courses}</Link>
-          </div>
-        </section>
-      </div>
-    );
-  }
 
   return (
     <div className="enroll">

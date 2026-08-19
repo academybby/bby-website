@@ -1,8 +1,9 @@
 import "../styles/learn.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { ALL_COURSES } from "../data/courses-data";
 import { useLang } from "../context/LanguageContext";
+import { useEnrollment } from "../context/EnrollmentContext";
 
 const TEXT = {
   EN: {
@@ -23,6 +24,12 @@ const TEXT = {
     lesson: "Lesson",
     video_placeholder: "🎬 Video will appear here once uploaded",
     locked: "🔒 Complete previous lesson to unlock",
+    checking: "Checking your access…",
+    not_enrolled_title: "Course Locked",
+    not_enrolled_sub: "You need to complete enrollment and payment to access this course.",
+    check_email_ph: "Enter the email you enrolled with",
+    check_access_btn: "Check Access",
+    go_enroll: "Enroll Now →",
   },
   TH: {
     home: "หน้าหลัก", courses: "หลักสูตร",
@@ -42,14 +49,58 @@ const TEXT = {
     lesson: "บทเรียน",
     video_placeholder: "🎬 วิดีโอจะแสดงที่นี่หลังอัปโหลด",
     locked: "🔒 เรียนบทก่อนหน้าให้เสร็จก่อนเพื่อปลดล็อก",
+    checking: "กำลังตรวจสอบสิทธิ์เข้าเรียน…",
+    not_enrolled_title: "คอร์สถูกล็อก",
+    not_enrolled_sub: "คุณต้องสมัครเรียนและชำระเงินให้เสร็จสิ้นก่อนจึงจะเข้าถึงคอร์สนี้ได้",
+    check_email_ph: "กรอกอีเมลที่ใช้สมัครเรียน",
+    check_access_btn: "ตรวจสอบสิทธิ์",
+    go_enroll: "สมัครเรียนเลย →",
   },
 };
 
+type AccessStatus = "checking" | "locked" | "unlocked";
+
 export default function LearnPage() {
   const { id } = useParams();
+  // Keying on `id` forces a full remount when the course changes, so access-check
+  // state naturally resets to its initial value instead of needing a manual reset
+  // (which would mean calling setState synchronously inside the effect below).
+  return <LearnPageForCourse key={id ?? "unknown"} id={id} />;
+}
+
+function LearnPageForCourse({ id }: { id?: string }) {
   const { lang } = useLang();
   const tx = TEXT[lang];
   const course = ALL_COURSES.find(c => c.id === Number(id)) || ALL_COURSES[0];
+  const { email, setEmail, checkEnrolled, isEnrolledLocally } = useEnrollment();
+
+  const [access, setAccess] = useState<AccessStatus>("checking");
+  const [emailInput, setEmailInput] = useState(email);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    (async () => {
+      if (isEnrolledLocally(course.id)) {
+        if (!cancelled) setAccess("unlocked");
+        return;
+      }
+      if (!email) {
+        if (!cancelled) setAccess("locked");
+        return;
+      }
+      const enrolled = await checkEnrolled(course.id);
+      if (!cancelled) setAccess(enrolled ? "unlocked" : "locked");
+    })();
+
+    return () => { cancelled = true; };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [course.id, email]);
+
+  const handleCheckAccess = (e: React.FormEvent) => {
+    e.preventDefault();
+    setEmail(emailInput);
+  };
 
   // Flatten curriculum into individual lessons (mock structure)
   const allLessons = course.curriculum.flatMap((week, wi) =>
@@ -70,6 +121,39 @@ export default function LearnPage() {
 
   const current = allLessons[activeLesson];
   const progressPct = Math.round((completed.size / allLessons.length) * 100);
+
+  if (access === "checking") {
+    return (
+      <div className="learn learn-locked-page">
+        <div className="learn-locked-box">
+          <p>{tx.checking}</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (access === "locked") {
+    return (
+      <div className="learn learn-locked-page">
+        <div className="learn-locked-box">
+          <div className="learn-locked-icon">🔒</div>
+          <h1>{tx.not_enrolled_title}</h1>
+          <p>{tx.not_enrolled_sub}</p>
+          <form className="learn-locked-form" onSubmit={handleCheckAccess}>
+            <input
+              type="email"
+              placeholder={tx.check_email_ph}
+              value={emailInput}
+              onChange={e => setEmailInput(e.target.value)}
+              required
+            />
+            <button type="submit" className="btn-outline-pill">{tx.check_access_btn}</button>
+          </form>
+          <Link to={`/courses/${course.id}/enroll`} className="btn-gold">{tx.go_enroll}</Link>
+        </div>
+      </div>
+    );
+  }
 
   const toggleComplete = () => {
     setCompleted(prev => {

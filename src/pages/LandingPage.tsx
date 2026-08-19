@@ -166,7 +166,7 @@ export default function LandingPage() {
           </div>
           <div className="courses-grid">
             {filtered.map(course => (
-              <div className="course-card" key={course.id}>
+              <Link to={`/courses/${course.id}`} className="course-card" key={course.id} style={{ textDecoration: "none" }}>
                 <div className="course-img">
                   <img src={course.img} alt={course.title} />
                   <span className="course-badge">{tx.level_map[course.level]}</span>
@@ -180,10 +180,10 @@ export default function LandingPage() {
                   </div>
                   <div className="course-foot">
                     <span className="course-price">{course.price}</span>
-                    <Link to={`/courses/${course.id}`} className="btn-gold-sm">{tx.view_details}</Link>
+                    <span className="btn-gold-sm">{tx.view_details}</span>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
           <div style={{ textAlign: "center", marginTop: "2.5rem" }}>

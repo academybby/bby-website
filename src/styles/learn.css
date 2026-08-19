@@ -5,6 +5,22 @@
   min-height: 100vh;
 }
 
+/* ── Locked (not enrolled) ── */
+.learn-locked-page { display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 2rem; }
+.learn-locked-box { max-width: 420px; text-align: center; }
+.learn-locked-icon { font-size: 3rem; margin-bottom: 1.5rem; }
+.learn-locked-box h1 { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: var(--text, #F0EDE4); margin-bottom: 0.75rem; }
+.learn-locked-box p { font-size: 0.92rem; color: var(--muted, #7A7468); line-height: 1.6; margin-bottom: 1.5rem; }
+.learn-locked-form { display: flex; gap: 0.6rem; margin-bottom: 1.5rem; }
+.learn-locked-form input {
+  flex: 1; background: var(--bg3, #1A1816); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px; padding: 0.7rem 1rem; color: var(--text, #F0EDE4);
+  font-size: 0.85rem; font-family: inherit; outline: none; transition: border-color 0.2s;
+}
+.learn-locked-form input:focus { border-color: rgba(212,168,67,0.5); }
+.learn-locked-form input::placeholder { color: var(--muted, #7A7468); }
+.learn-locked-form button { white-space: nowrap; }
+
 /* ── Top bar ── */
 .learn-topbar {
   display: flex; align-items: center; gap: 1.5rem;

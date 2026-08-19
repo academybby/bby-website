@@ -3,6 +3,7 @@ import LandingPage from "./pages/LandingPage";
 import CoursesPage from "./pages/CoursesPage";
 import CourseDetailPage from "./pages/CourseDetailPage";
 import EnrollPage from "./pages/EnrollPage";
+import PaymentPage from "./pages/PaymentPage";
 import LearnPage from "./pages/LearnPage";
 import ContactPage from "./pages/ContactPage";
 import CoachingPage from "./pages/CoachingPage";
@@ -12,26 +13,30 @@ import Navbar from "./components/NavBar";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import { LanguageProvider } from "./context/LanguageContext";
+import { EnrollmentProvider } from "./context/EnrollmentContext";
 
 function App() {
   return (
     <LanguageProvider>
-      <BrowserRouter>
-        <ScrollToTop />
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/courses" element={<CoursesPage />} />
-          <Route path="/courses/:id" element={<CourseDetailPage />} />
-          <Route path="/courses/:id/enroll" element={<EnrollPage />} />
-          <Route path="/courses/:id/learn" element={<LearnPage />} />
-          <Route path="/coaching" element={<CoachingPage />} />
-          <Route path="/community" element={<CommunityPage />} />
-          <Route path="/certifications" element={<CertificationsPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-        </Routes>
-        <Footer />
-      </BrowserRouter>
+      <EnrollmentProvider>
+        <BrowserRouter>
+          <ScrollToTop />
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/courses" element={<CoursesPage />} />
+            <Route path="/courses/:id" element={<CourseDetailPage />} />
+            <Route path="/courses/:id/enroll" element={<EnrollPage />} />
+            <Route path="/courses/:id/payment" element={<PaymentPage />} />
+            <Route path="/courses/:id/learn" element={<LearnPage />} />
+            <Route path="/coaching" element={<CoachingPage />} />
+            <Route path="/community" element={<CommunityPage />} />
+            <Route path="/certifications" element={<CertificationsPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+          </Routes>
+          <Footer />
+        </BrowserRouter>
+      </EnrollmentProvider>
     </LanguageProvider>
   );
 }

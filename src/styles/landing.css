@@ -253,6 +253,7 @@ body { background: var(--bg); transition: background 0.3s; }
 .filter-tab.active { background: var(--gold); color: #0D0C0A; border-color: var(--gold); }
 .courses-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem; }
 .course-card {
+  display: block;
   background: var(--card-bg);
   border: 1px solid var(--card-border);
   border-radius: 16px; overflow: hidden;
