@@ -55,6 +55,7 @@ export function EnrollmentProvider({ children }: { children: ReactNode }) {
   );
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export function useEnrollment() {
   return useContext(EnrollmentContext);
 }
