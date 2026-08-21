@@ -91,6 +91,42 @@
   transition: all 0.2s;
 }
 .theme-toggle:hover { background: var(--gold); color: #0D0C0A; }
+.nav-login-btn {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.nav-login-btn:hover { border-color: var(--gold); color: var(--gold); }
+.nav-account { display: flex; align-items: center; gap: 0.5rem; }
+.nav-account-link {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-family: 'DM Sans', sans-serif;
+  transition: color 0.2s;
+}
+.nav-account-link:hover { color: var(--gold); }
+.nav-account-logout {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--bg3);
+  color: var(--muted);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.2s;
+}
+.nav-account-logout:hover { background: var(--gold); color: #0D0C0A; border-color: var(--gold); }
 .btn-line {
   background: var(--gold);
   color: #0D0C0A;

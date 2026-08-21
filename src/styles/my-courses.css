@@ -1,0 +1,63 @@
+.mc {
+  color: var(--text, #F0EDE4);
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg, #0D0C0A);
+  min-height: 100vh;
+}
+.mc-hero {
+  background: linear-gradient(135deg, #0D0C0A 0%, #1A1410 60%, #221810 100%);
+  padding: 4rem 2.5rem 3rem;
+  border-bottom: 1px solid rgba(212,168,67,0.12);
+}
+.mc-hero-inner { max-width: 1200px; margin: 0 auto; }
+.mc-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.6rem; font-weight: 700;
+  color: var(--text, #F0EDE4); margin-bottom: 0.5rem;
+}
+.mc-hero .gold { color: #D4A843; }
+.mc-hero p { font-size: 1rem; color: var(--muted, #7A7468); font-weight: 300; }
+
+.mc-main { padding: 3rem 2.5rem; }
+.mc-main-inner { max-width: 1200px; margin: 0 auto; }
+.mc-status, .mc-error { font-size: 0.9rem; color: var(--muted, #7A7468); }
+.mc-error { color: #E88; }
+
+.mc-empty {
+  text-align: center; padding: 4rem 1rem;
+  display: flex; flex-direction: column; align-items: center; gap: 1.25rem;
+}
+.mc-empty p { color: var(--muted, #7A7468); font-size: 1rem; }
+
+.mc-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+.mc-card {
+  background: var(--card-bg, #1A1816);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 16px; overflow: hidden;
+  transition: border-color 0.2s;
+}
+.mc-card:hover { border-color: rgba(212,168,67,0.25); }
+.mc-card-img { aspect-ratio: 16/9; overflow: hidden; }
+.mc-card-img img { width: 100%; height: 100%; object-fit: cover; }
+.mc-card-body { padding: 1.25rem; }
+.mc-card-body h3 { font-size: 1rem; font-weight: 700; color: var(--text, #F0EDE4); margin-bottom: 0.75rem; }
+.mc-card-meta {
+  display: flex; gap: 1rem; font-size: 0.78rem; color: var(--muted, #7A7468);
+  margin-bottom: 1rem;
+}
+.mc-card-meta span { display: inline-flex; align-items: center; gap: 0.3rem; }
+.mc-continue-btn { width: 100%; padding: 0.7rem; font-size: 0.86rem; }
+
+.btn-gold {
+  background: #D4A843; color: #0D0C0A;
+  border: none; padding: 0.85rem 2rem;
+  border-radius: 999px; font-size: 0.95rem; font-weight: 600;
+  cursor: pointer; font-family: inherit;
+  transition: background 0.2s, transform 0.15s;
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  text-decoration: none;
+}
+.btn-gold:hover { background: #F0C85A; transform: translateY(-1px); }

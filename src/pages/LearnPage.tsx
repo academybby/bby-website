@@ -1,6 +1,7 @@
 import "../styles/learn.css";
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
+import { IconCheck, IconMovie, IconLock } from "@tabler/icons-react";
 import { ALL_COURSES } from "../data/courses-data";
 import { useLang } from "../context/LanguageContext";
 import { useEnrollment } from "../context/EnrollmentContext";
@@ -13,7 +14,7 @@ const TEXT = {
     complete: "Complete",
     curriculum: "Curriculum",
     mark_complete: "Mark as Complete",
-    completed: "✓ Completed",
+    completed: "Completed",
     next_lesson: "Next Lesson →",
     prev_lesson: "← Previous",
     notes_title: "Notes",
@@ -22,14 +23,16 @@ const TEXT = {
     resources_title: "Resources",
     no_resources: "No additional resources for this lesson.",
     lesson: "Lesson",
-    video_placeholder: "🎬 Video will appear here once uploaded",
-    locked: "🔒 Complete previous lesson to unlock",
+    video_placeholder: "Video will appear here once uploaded",
+    locked: "Complete previous lesson to unlock",
     checking: "Checking your access…",
     not_enrolled_title: "Course Locked",
     not_enrolled_sub: "You need to complete enrollment and payment to access this course.",
     check_email_ph: "Enter the email you enrolled with",
     check_access_btn: "Check Access",
     go_enroll: "Enroll Now →",
+    have_account: "Have an account?",
+    login_link: "Log in",
   },
   TH: {
     home: "หน้าหลัก", courses: "หลักสูตร",
@@ -38,7 +41,7 @@ const TEXT = {
     complete: "เสร็จสมบูรณ์",
     curriculum: "หลักสูตร",
     mark_complete: "ทำเครื่องหมายว่าเรียนแล้ว",
-    completed: "✓ เรียนแล้ว",
+    completed: "เรียนแล้ว",
     next_lesson: "บทเรียนถัดไป →",
     prev_lesson: "← บทก่อนหน้า",
     notes_title: "บันทึก",
@@ -47,14 +50,16 @@ const TEXT = {
     resources_title: "แหล่งข้อมูล",
     no_resources: "ไม่มีแหล่งข้อมูลเพิ่มเติมสำหรับบทเรียนนี้",
     lesson: "บทเรียน",
-    video_placeholder: "🎬 วิดีโอจะแสดงที่นี่หลังอัปโหลด",
-    locked: "🔒 เรียนบทก่อนหน้าให้เสร็จก่อนเพื่อปลดล็อก",
+    video_placeholder: "วิดีโอจะแสดงที่นี่หลังอัปโหลด",
+    locked: "เรียนบทก่อนหน้าให้เสร็จก่อนเพื่อปลดล็อก",
     checking: "กำลังตรวจสอบสิทธิ์เข้าเรียน…",
     not_enrolled_title: "คอร์สถูกล็อก",
     not_enrolled_sub: "คุณต้องสมัครเรียนและชำระเงินให้เสร็จสิ้นก่อนจึงจะเข้าถึงคอร์สนี้ได้",
     check_email_ph: "กรอกอีเมลที่ใช้สมัครเรียน",
     check_access_btn: "ตรวจสอบสิทธิ์",
     go_enroll: "สมัครเรียนเลย →",
+    have_account: "มีบัญชีอยู่แล้ว?",
+    login_link: "เข้าสู่ระบบ",
   },
 };
 
@@ -136,7 +141,7 @@ function LearnPageForCourse({ id }: { id?: string }) {
     return (
       <div className="learn learn-locked-page">
         <div className="learn-locked-box">
-          <div className="learn-locked-icon">🔒</div>
+          <div className="learn-locked-icon"><IconLock size={36} /></div>
           <h1>{tx.not_enrolled_title}</h1>
           <p>{tx.not_enrolled_sub}</p>
           <form className="learn-locked-form" onSubmit={handleCheckAccess}>
@@ -149,6 +154,7 @@ function LearnPageForCourse({ id }: { id?: string }) {
             />
             <button type="submit" className="btn-outline-pill">{tx.check_access_btn}</button>
           </form>
+          <p className="learn-locked-login">{tx.have_account} <Link to="/login" state={{ from: `/courses/${course.id}/learn` }}>{tx.login_link}</Link></p>
           <Link to={`/courses/${course.id}/enroll`} className="btn-gold">{tx.go_enroll}</Link>
         </div>
       </div>
@@ -196,7 +202,7 @@ function LearnPageForCourse({ id }: { id?: string }) {
                 className={`learn-lesson-item${activeLesson === i ? " active" : ""}${completed.has(i) ? " done" : ""}`}
                 onClick={() => setActiveLesson(i)}
               >
-                <span className="learn-lesson-check">{completed.has(i) ? "✓" : i + 1}</span>
+                <span className="learn-lesson-check">{completed.has(i) ? <IconCheck size={14} /> : i + 1}</span>
                 <span className="learn-lesson-title">{lesson.title}</span>
               </button>
             ))}
@@ -216,6 +222,7 @@ function LearnPageForCourse({ id }: { id?: string }) {
               />
             ) : (
               <div className="learn-video-placeholder">
+                <IconMovie size={32} />
                 <div>{tx.video_placeholder}</div>
               </div>
             )}
@@ -230,7 +237,7 @@ function LearnPageForCourse({ id }: { id?: string }) {
               className={`learn-complete-btn${completed.has(activeLesson) ? " done" : ""}`}
               onClick={toggleComplete}
             >
-              {completed.has(activeLesson) ? tx.completed : tx.mark_complete}
+              {completed.has(activeLesson) ? <><IconCheck size={16} /> {tx.completed}</> : tx.mark_complete}
             </button>
           </div>
 

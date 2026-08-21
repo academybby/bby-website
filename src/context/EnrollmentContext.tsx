@@ -1,4 +1,5 @@
 import { createContext, useContext, useState, type ReactNode } from "react";
+import { useAuth } from "./AuthContext";
 
 const EMAIL_KEY = "bby_email";
 
@@ -19,12 +20,17 @@ const EnrollmentContext = createContext<EnrollmentContextType>({
 });
 
 export function EnrollmentProvider({ children }: { children: ReactNode }) {
-  const [email, setEmailState] = useState(() => localStorage.getItem(EMAIL_KEY) ?? "");
+  const { user } = useAuth();
+  const [manualEmail, setManualEmail] = useState(() => localStorage.getItem(EMAIL_KEY) ?? "");
   const [localEnrollments, setLocalEnrollments] = useState<Set<number>>(new Set());
+
+  // Logged-in users never need to type their email — it's known from the session,
+  // and always takes priority over whatever a guest previously typed.
+  const email = user?.email ?? manualEmail;
 
   const setEmail = (value: string) => {
     const normalized = value.trim().toLowerCase();
-    setEmailState(normalized);
+    setManualEmail(normalized);
     localStorage.setItem(EMAIL_KEY, normalized);
   };
 

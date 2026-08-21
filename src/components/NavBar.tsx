@@ -1,12 +1,21 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-import "../styles/navbar.css";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { IconSun, IconMoon, IconLogin2, IconLogout, IconUserCircle } from "@tabler/icons-react";
+import "../styles/Navbar.css";
 import { useLang } from "../context/LanguageContext";
+import { useAuth } from "../context/AuthContext";
 
 export default function Navbar() {
   const [isDark, setIsDark] = useState(true);
   const { lang, setLang, t } = useLang();
+  const { user, signOut } = useAuth();
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleSignOut = async () => {
+    await signOut();
+    navigate("/");
+  };
 
   if (typeof document !== "undefined") {
     document.documentElement.classList.toggle("light", !isDark);
@@ -39,8 +48,22 @@ export default function Navbar() {
           <button className={`lang-btn${lang === "TH" ? " active" : ""}`} onClick={() => setLang("TH")}>TH</button>
         </div>
         <button className="theme-toggle" onClick={() => setIsDark(!isDark)}>
-          {isDark ? "☀️" : "🌙"}
+          {isDark ? <IconSun size={18} /> : <IconMoon size={18} />}
         </button>
+        {user ? (
+          <div className="nav-account">
+            <Link to="/my-courses" className="nav-account-link">
+              <IconUserCircle size={16} /> {t("My Courses", "คอร์สของฉัน")}
+            </Link>
+            <button className="nav-account-logout" onClick={handleSignOut} title={t("Log out", "ออกจากระบบ")}>
+              <IconLogout size={16} />
+            </button>
+          </div>
+        ) : (
+          <Link to="/login" className="nav-login-btn">
+            <IconLogin2 size={16} /> {t("Login", "เข้าสู่ระบบ")}
+          </Link>
+        )}
         <button className="btn-line">{t("Chat on LINE", "แชทบน LINE")}</button>
       </div>
     </nav>
