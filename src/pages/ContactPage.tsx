@@ -1,6 +1,7 @@
 import "../styles/contact.css";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { IconCircleCheck, IconMail, IconPhone, IconMapPin, IconClock, IconMessageCircle, IconBooks, IconBriefcase, IconUsers, IconMedal } from "@tabler/icons-react";
 import { useLang } from "../context/LanguageContext";
 
 const TEXT = {
@@ -30,7 +31,7 @@ const TEXT = {
     line_btn: "Open LINE Chat →",
     line_id: "LINE ID: @bbyacademy",
     quick_title: "Quick Links",
-    quick_links: ["📚 Browse All Courses", "💼 Coaching & Interview", "👥 Join Community", "🏅 Certifications"],
+    quick_links: ["Browse All Courses", "Coaching & Interview", "Join Community", "Certifications"],
     faq_title: "Frequently Asked Questions",
     faqs: [
       { q: "How do I enroll in a course?", a: "You can enroll directly on our website or chat with us on LINE. We'll guide you through the process." },
@@ -67,7 +68,7 @@ const TEXT = {
     line_btn: "เปิด LINE Chat →",
     line_id: "LINE ID: @bbyacademy",
     quick_title: "ลิงก์ด่วน",
-    quick_links: ["📚 ดูหลักสูตรทั้งหมด", "💼 โค้ชชิ่งและสัมภาษณ์", "👥 เข้าร่วมชุมชน", "🏅 ใบรับรอง"],
+    quick_links: ["ดูหลักสูตรทั้งหมด", "โค้ชชิ่งและสัมภาษณ์", "เข้าร่วมชุมชน", "ใบรับรอง"],
     faq_title: "คำถามที่พบบ่อย",
     faqs: [
       { q: "จะสมัครเรียนได้ยังไง?", a: "สมัครได้โดยตรงบนเว็บไซต์หรือแชทกับเราบน LINE เราจะแนะนำขั้นตอนให้" },
@@ -81,6 +82,7 @@ const TEXT = {
 };
 
 const QUICK_PATHS = ["/courses", "/coaching", "/community", "/certifications"];
+const QUICK_ICONS = [IconBooks, IconBriefcase, IconUsers, IconMedal];
 
 export default function ContactPage() {
   const [form, setForm] = useState({ name: "", email: "", phone: "", interest: "", message: "" });
@@ -105,7 +107,7 @@ export default function ContactPage() {
             <p>{tx.form_sub}</p>
             {sent ? (
               <div className="ct-success">
-                <div className="ct-success-icon">✅</div>
+                <div className="ct-success-icon"><IconCircleCheck size={40} /></div>
                 <h3>{tx.success_title}</h3>
                 <p>{tx.success_sub}</p>
                 <button className="btn-gold" onClick={() => setSent(false)}>{tx.send_another}</button>
@@ -148,26 +150,26 @@ export default function ContactPage() {
               <h3>{tx.contact_title}</h3>
               <div className="ct-info-items">
                 <div className="ct-info-item">
-                  <div className="ct-info-icon">✉</div>
+                  <div className="ct-info-icon"><IconMail size={20} /></div>
                   <div><div className="ct-info-label">{tx.email_label}</div><a href="mailto:hello@bbyacademy.com">hello@bbyacademy.com</a></div>
                 </div>
                 <div className="ct-info-item">
-                  <div className="ct-info-icon">📞</div>
+                  <div className="ct-info-icon"><IconPhone size={20} /></div>
                   <div><div className="ct-info-label">{tx.phone_label}</div><a href="tel:+6621234567">+66 2 123 4567</a></div>
                 </div>
                 <div className="ct-info-item">
-                  <div className="ct-info-icon">📍</div>
+                  <div className="ct-info-icon"><IconMapPin size={20} /></div>
                   <div><div className="ct-info-label">{tx.location_label}</div><span style={{ whiteSpace: "pre-line" }}>{tx.location_val}</span></div>
                 </div>
                 <div className="ct-info-item">
-                  <div className="ct-info-icon">⏰</div>
+                  <div className="ct-info-icon"><IconClock size={20} /></div>
                   <div><div className="ct-info-label">{tx.hours_label}</div><span style={{ whiteSpace: "pre-line" }}>{tx.hours_val}</span></div>
                 </div>
               </div>
             </div>
 
             <div className="ct-line-card">
-              <div className="ct-line-icon">💬</div>
+              <div className="ct-line-icon"><IconMessageCircle size={28} /></div>
               <h3>{tx.line_title}</h3>
               <p>{tx.line_sub}</p>
               <button className="btn-gold ct-line-btn">{tx.line_btn}</button>
@@ -177,7 +179,10 @@ export default function ContactPage() {
             <div className="ct-quick-card">
               <h3>{tx.quick_title}</h3>
               <div className="ct-quick-links">
-                {tx.quick_links.map((l, i) => <Link key={i} to={QUICK_PATHS[i]}>{l}</Link>)}
+                {tx.quick_links.map((l, i) => {
+                  const Icon = QUICK_ICONS[i];
+                  return <Link key={i} to={QUICK_PATHS[i]}><Icon size={16} /> {l}</Link>;
+                })}
               </div>
             </div>
           </div>

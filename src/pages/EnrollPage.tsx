@@ -1,6 +1,7 @@
 import "../styles/enroll.css";
 import { useState } from "react";
 import { useParams, useSearchParams, Link, useNavigate } from "react-router-dom";
+import { IconClock, IconVideo } from "@tabler/icons-react";
 import { ALL_COURSES } from "../data/courses-data";
 import { useLang } from "../context/LanguageContext";
 import { useEnrollment } from "../context/EnrollmentContext";
@@ -173,8 +174,8 @@ export default function EnrollPage() {
               <img src={course.img} alt={course.title} className="enroll-summary-img" />
               <div className="enroll-summary-title">{course.title}</div>
               <div className="enroll-summary-meta">
-                <span>⏱ {course.weeks} {lang === "EN" ? "weeks" : "สัปดาห์"}</span>
-                <span>📹 {course.lessons} {lang === "EN" ? "lessons" : "บทเรียน"}</span>
+                <span><IconClock size={14} /> {course.weeks} {lang === "EN" ? "weeks" : "สัปดาห์"}</span>
+                <span><IconVideo size={14} /> {course.lessons} {lang === "EN" ? "lessons" : "บทเรียน"}</span>
               </div>
               <hr className="enroll-divider" />
               <div className="enroll-summary-row">

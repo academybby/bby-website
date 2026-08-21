@@ -65,6 +65,7 @@
   display: flex; flex-wrap: wrap; gap: 1.25rem;
   font-size: 0.82rem; color: var(--muted, #7A7468);
 }
+.cdp-meta-row span { display: inline-flex; align-items: center; gap: 0.3rem; }
 
 /* ── Sticky Card ── */
 .cdp-sticky-card {
@@ -101,7 +102,8 @@
   padding: 0.75rem;
 }
 .cdp-card-features { display: flex; flex-direction: column; gap: 0.4rem; }
-.cdp-feature { font-size: 0.82rem; color: var(--muted, #7A7468); }
+.cdp-feature { display: flex; align-items: center; gap: 0.4rem; font-size: 0.82rem; color: var(--muted, #7A7468); }
+.cdp-feature svg { color: #D4A843; flex-shrink: 0; }
 
 /* ── Body ── */
 .cdp-body {
@@ -135,7 +137,7 @@
   font-size: 0.88rem; color: var(--text, #F0EDE4);
 }
 .cdp-check {
-  color: #D4A843; font-weight: 700; flex-shrink: 0;
+  color: #D4A843; flex-shrink: 0; display: inline-flex; align-items: center;
 }
 
 /* Curriculum */
@@ -178,6 +180,7 @@
 .cdp-instructor-info h3 { font-size: 1.1rem; font-weight: 700; color: var(--text, #F0EDE4); margin-bottom: 0.25rem; }
 .cdp-instructor-title { font-size: 0.85rem; color: #D4A843; margin-bottom: 0.75rem; }
 .cdp-instructor-stats { display: flex; gap: 1.25rem; font-size: 0.8rem; color: var(--muted, #7A7468); margin-bottom: 1rem; }
+.cdp-instructor-stats span { display: inline-flex; align-items: center; gap: 0.3rem; }
 .cdp-instructor-bio { font-size: 0.88rem; color: var(--muted, #7A7468); line-height: 1.7; }
 
 /* Rating Summary */
@@ -285,7 +288,7 @@
   border-radius: 999px; font-size: 0.95rem; font-weight: 600;
   cursor: pointer; font-family: inherit;
   transition: background 0.2s, transform 0.15s;
-  display: inline-block; text-decoration: none;
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; text-decoration: none;
 }
 .btn-gold:hover { background: #F0C85A; transform: translateY(-1px); }
 .btn-outline-pill {
@@ -294,6 +297,6 @@
   padding: 0.85rem 2rem; border-radius: 999px;
   font-size: 0.95rem; font-weight: 500;
   cursor: pointer; font-family: inherit; transition: all 0.2s;
-  display: inline-block; text-decoration: none;
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; text-decoration: none;
 }
 .btn-outline-pill:hover { background: rgba(212,168,67,0.1); }

@@ -82,7 +82,7 @@
 }
 .cert-card-header { display: flex; align-items: flex-start; gap: 1rem; }
 .cert-icon {
-  font-size: 1.75rem; width: 52px; height: 52px;
+  color: #D4A843; width: 52px; height: 52px;
   background: rgba(212,168,67,0.1); border-radius: 12px;
   display: flex; align-items: center; justify-content: center; flex-shrink: 0;
 }
@@ -91,10 +91,11 @@
 .cert-price { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: #D4A843; margin-left: auto; white-space: nowrap; }
 .cert-card > p { font-size: 0.85rem; color: var(--muted, #7A7468); line-height: 1.65; }
 .cert-meta { display: flex; gap: 1.5rem; font-size: 0.78rem; color: var(--muted, #7A7468); }
+.cert-meta span { display: inline-flex; align-items: center; gap: 0.3rem; }
 .cert-includes { background: var(--bg3, #252220); border-radius: 10px; padding: 1rem; }
 .cert-includes-title { font-size: 0.75rem; font-weight: 600; color: var(--text, #F0EDE4); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.6rem; }
 .cert-include-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.82rem; color: var(--muted, #7A7468); margin-bottom: 0.35rem; }
-.cert-include-item span { color: #D4A843; font-weight: 700; flex-shrink: 0; }
+.cert-include-item span { color: #D4A843; display: inline-flex; align-items: center; flex-shrink: 0; }
 .cert-suitable { font-size: 0.8rem; color: var(--muted, #7A7468); }
 .cert-suitable-label { color: var(--text, #F0EDE4); font-weight: 600; }
 .cert-card .btn-gold, .cert-card .btn-outline-pill { width: 100%; padding: 0.8rem; text-align: center; }
@@ -130,7 +131,7 @@
 .cert-cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
 /* Shared Buttons */
-.btn-gold { background: #D4A843; color: #0D0C0A; border: none; padding: 0.85rem 2rem; border-radius: 999px; font-size: 0.95rem; font-weight: 600; cursor: pointer; font-family: inherit; transition: background 0.2s, transform 0.15s; display: inline-block; }
+.btn-gold { background: #D4A843; color: #0D0C0A; border: none; padding: 0.85rem 2rem; border-radius: 999px; font-size: 0.95rem; font-weight: 600; cursor: pointer; font-family: inherit; transition: background 0.2s, transform 0.15s; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; }
 .btn-gold:hover { background: #F0C85A; transform: translateY(-1px); }
-.btn-outline-pill { background: transparent; color: var(--text, #F0EDE4); border: 1.5px solid #D4A843; padding: 0.85rem 2rem; border-radius: 999px; font-size: 0.95rem; font-weight: 500; cursor: pointer; font-family: inherit; transition: all 0.2s; display: inline-block; }
+.btn-outline-pill { background: transparent; color: var(--text, #F0EDE4); border: 1.5px solid #D4A843; padding: 0.85rem 2rem; border-radius: 999px; font-size: 0.95rem; font-weight: 500; cursor: pointer; font-family: inherit; transition: all 0.2s; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; }
 .btn-outline-pill:hover { background: rgba(212,168,67,0.1); }

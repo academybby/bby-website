@@ -79,7 +79,7 @@
   width: 180px; height: 180px; margin: 0 auto 1rem;
   background: var(--bg3, #1A1816); border: 2px dashed rgba(255,255,255,0.15);
   border-radius: 12px; display: flex; align-items: center; justify-content: center;
-  font-size: 3rem;
+  color: var(--muted, #7A7468);
 }
 .pay-qr-image {
   width: 220px; height: 220px; margin: 0 auto 1rem;
@@ -124,7 +124,7 @@
 .pay-success {
   max-width: 560px; margin: 0 auto; padding: 6rem 2.5rem; text-align: center;
 }
-.pay-success-icon { font-size: 4rem; margin-bottom: 1.5rem; }
+.pay-success-icon { color: #D4A843; margin-bottom: 1.5rem; display: flex; justify-content: center; }
 .pay-success h1 {
   font-family: 'Playfair Display', serif;
   font-size: 2.2rem; font-weight: 700;

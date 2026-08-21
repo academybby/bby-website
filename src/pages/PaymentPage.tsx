@@ -1,6 +1,7 @@
 import "../styles/payment.css";
 import { useState, useEffect, useRef } from "react";
 import { useParams, Link, useNavigate, useLocation } from "react-router-dom";
+import { IconConfetti, IconMailOpened, IconDeviceMobile } from "@tabler/icons-react";
 import { ALL_COURSES } from "../data/courses-data";
 import { useLang } from "../context/LanguageContext";
 import { useEnrollment } from "../context/EnrollmentContext";
@@ -214,7 +215,7 @@ export default function PaymentPage() {
     return (
       <div className="payment">
         <section className="pay-success">
-          <div className="pay-success-icon">🎉</div>
+          <div className="pay-success-icon"><IconConfetti size={44} /></div>
           <h1>{tx.success_title}</h1>
           <p>{tx.success_sub}</p>
           <div className="pay-success-btns">
@@ -230,7 +231,7 @@ export default function PaymentPage() {
     return (
       <div className="payment">
         <section className="pay-success">
-          <div className="pay-success-icon">📩</div>
+          <div className="pay-success-icon"><IconMailOpened size={44} /></div>
           <h1>{tx.pending_title}</h1>
           <p>{tx.pending_sub}</p>
           <div className="pay-success-btns">
@@ -291,7 +292,7 @@ export default function PaymentPage() {
               )}
               {method === "promptpay" && phase !== "qr_wait" && (
                 <div className="pay-qr-wrap">
-                  <div className="pay-qr-box">📱</div>
+                  <div className="pay-qr-box"><IconDeviceMobile size={40} /></div>
                   <p className="pay-note">{tx.qr_note}</p>
                 </div>
               )}

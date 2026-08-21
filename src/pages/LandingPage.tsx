@@ -1,6 +1,7 @@
 import "../styles/landing.css";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { IconMessageCircle, IconBooks, IconUsers, IconBriefcase, IconVideo, IconMedal, IconCrown, IconTarget, IconChalkboard, IconTrophy, IconClock, IconChartBar } from "@tabler/icons-react";
 import { ALL_COURSES } from "../data/courses-data";
 import { useLang } from "../context/LanguageContext";
 
@@ -12,7 +13,7 @@ const TEXT = {
     hero_title2: "Transform Your Future.",
     hero_sub: "Learn English, Chinese, Coding, and Career Skills with real-world results.",
     hero_btn1: "Start Learning →",
-    hero_btn2: "💬 Chat on LINE",
+    hero_btn2: "Chat on LINE",
     eco_title: "BBY Ecosystem",
     eco_sub: "Your complete learning journey in one place",
     eco_cards: [
@@ -39,10 +40,10 @@ const TEXT = {
     why_title: "Why Choose BBY Academy?",
     why_sub: "We're not just another language school — we're your partner in transformation",
     why_cards: [
-      { icon: "🎯", title: "Real-World Results", desc: "Our students get into top universities, land dream jobs, and achieve career transformations." },
-      { icon: "👨‍🏫", title: "Expert Native Teachers", desc: "Learn from certified instructors who are native speakers with years of teaching experience." },
-      { icon: "🏆", title: "Proven Track Record", desc: "95% of our students achieve their target scores. Over 2,000 successful graduates with BBY." },
-      { icon: "⏰", title: "Flexible Learning", desc: "Study at your own pace with 24/7 online access, or join live classes that fit your schedule." },
+      { title: "Real-World Results", desc: "Our students get into top universities, land dream jobs, and achieve career transformations." },
+      { title: "Expert Native Teachers", desc: "Learn from certified instructors who are native speakers with years of teaching experience." },
+      { title: "Proven Track Record", desc: "95% of our students achieve their target scores. Over 2,000 successful graduates with BBY." },
+      { title: "Flexible Learning", desc: "Study at your own pace with 24/7 online access, or join live classes that fit your schedule." },
     ],
     testimonials_title: "Student Success Stories",
     testimonials_sub: "Real results from real students",
@@ -54,14 +55,14 @@ const TEXT = {
     cta_title: "Start Your Learning Journey Today",
     cta_sub: "Join BBY Academy and unlock your full potential.",
     cta_btn1: "View Courses →",
-    cta_btn2: "💬 Chat on LINE",
+    cta_btn2: "Chat on LINE",
   },
   TH: {
     hero_title1: "อัพเกรดทักษะของคุณ",
     hero_title2: "เปลี่ยนอนาคตของคุณ",
     hero_sub: "เรียนภาษาอังกฤษ ภาษาจีน Coding และทักษะอาชีพกับผลลัพธ์จริง",
     hero_btn1: "เริ่มเรียนเลย →",
-    hero_btn2: "💬 แชทบน LINE",
+    hero_btn2: "แชทบน LINE",
     eco_title: "ระบบนิเวศ BBY",
     eco_sub: "เส้นทางการเรียนรู้ครบวงจรในที่เดียว",
     eco_cards: [
@@ -88,10 +89,10 @@ const TEXT = {
     why_title: "ทำไมต้องเลือก BBY Academy?",
     why_sub: "เราไม่ใช่แค่โรงเรียนสอนภาษา — เราคือพาร์ทเนอร์ในการเปลี่ยนแปลงของคุณ",
     why_cards: [
-      { icon: "🎯", title: "ผลลัพธ์จริงในชีวิตจริง", desc: "นักเรียนของเราเข้ามหาวิทยาลัยชั้นนำ ได้งานในฝัน และเปลี่ยนเส้นทางอาชีพ" },
-      { icon: "👨‍🏫", title: "ครูเจ้าของภาษาผู้เชี่ยวชาญ", desc: "เรียนจากผู้สอนที่ได้รับการรับรองซึ่งเป็นเจ้าของภาษาพื้นเมืองและมีประสบการณ์สูง" },
-      { icon: "🏆", title: "ประวัติความสำเร็จที่พิสูจน์แล้ว", desc: "95% ของนักเรียนผ่านเป้าหมายที่ตั้งไว้ ผู้สำเร็จการศึกษากว่า 2,000 คน" },
-      { icon: "⏰", title: "เรียนได้ยืดหยุ่น", desc: "เรียนตามจังหวะของคุณด้วยการเข้าถึง 24/7 หรือเข้าเรียนสดตามตารางที่เหมาะกับคุณ" },
+      { title: "ผลลัพธ์จริงในชีวิตจริง", desc: "นักเรียนของเราเข้ามหาวิทยาลัยชั้นนำ ได้งานในฝัน และเปลี่ยนเส้นทางอาชีพ" },
+      { title: "ครูเจ้าของภาษาผู้เชี่ยวชาญ", desc: "เรียนจากผู้สอนที่ได้รับการรับรองซึ่งเป็นเจ้าของภาษาพื้นเมืองและมีประสบการณ์สูง" },
+      { title: "ประวัติความสำเร็จที่พิสูจน์แล้ว", desc: "95% ของนักเรียนผ่านเป้าหมายที่ตั้งไว้ ผู้สำเร็จการศึกษากว่า 2,000 คน" },
+      { title: "เรียนได้ยืดหยุ่น", desc: "เรียนตามจังหวะของคุณด้วยการเข้าถึง 24/7 หรือเข้าเรียนสดตามตารางที่เหมาะกับคุณ" },
     ],
     testimonials_title: "เรื่องราวความสำเร็จของนักเรียน",
     testimonials_sub: "ผลลัพธ์จริงจากนักเรียนจริง",
@@ -103,12 +104,13 @@ const TEXT = {
     cta_title: "เริ่มต้นการเดินทางเรียนรู้ของคุณวันนี้",
     cta_sub: "เข้าร่วม BBY Academy และปลดล็อกศักยภาพสูงสุดของคุณ",
     cta_btn1: "ดูหลักสูตร →",
-    cta_btn2: "💬 แชทบน LINE",
+    cta_btn2: "แชทบน LINE",
   },
 };
 
 const ECO_PATHS = ["/courses", "/community", "/coaching", "/coaching", "/certifications", "/contact"];
-const ECO_ICONS = ["📚", "👥", "💼", "🎬", "🏅", "👑"];
+const ECO_ICONS = [IconBooks, IconUsers, IconBriefcase, IconVideo, IconMedal, IconCrown];
+const WHY_ICONS = [IconTarget, IconChalkboard, IconTrophy, IconClock];
 const CAT_KEYS = ["All", "English", "Chinese", "Coding", "Finance", "Law"];
 
 export default function LandingPage() {
@@ -130,7 +132,7 @@ export default function LandingPage() {
           <p>{tx.hero_sub}</p>
           <div className="hero-btns">
             <Link to="/courses" className="btn-gold">{tx.hero_btn1}</Link>
-            <button className="btn-outline-pill">{tx.hero_btn2}</button>
+            <button className="btn-outline-pill"><IconMessageCircle size={18} /> {tx.hero_btn2}</button>
           </div>
         </div>
         <div className="scroll-mouse"><div className="scroll-wheel" /></div>
@@ -142,14 +144,17 @@ export default function LandingPage() {
           <h2 className="section-title center">{tx.eco_title}</h2>
           <p className="section-sub center">{tx.eco_sub}</p>
           <div className="eco-grid">
-            {tx.eco_cards.map((item, i) => (
+            {tx.eco_cards.map((item, i) => {
+              const Icon = ECO_ICONS[i];
+              return (
               <div className="eco-card" key={i}>
-                <div className="eco-icon">{ECO_ICONS[i]}</div>
+                <div className="eco-icon"><Icon size={26} /></div>
                 <h3>{item.name}</h3>
                 <p>{item.desc}</p>
                 <Link to={ECO_PATHS[i]} className="eco-link">{item.link} →</Link>
               </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -175,8 +180,8 @@ export default function LandingPage() {
                   <h3>{course.title}</h3>
                   <p>{course.desc}</p>
                   <div className="course-meta">
-                    <span>⏱ {course.weeks} {tx.weeks}</span>
-                    <span>📊 {tx.level_map[course.level]}</span>
+                    <span><IconClock size={14} /> {course.weeks} {tx.weeks}</span>
+                    <span><IconChartBar size={14} /> {tx.level_map[course.level]}</span>
                   </div>
                   <div className="course-foot">
                     <span className="course-price">{course.price}</span>
@@ -212,12 +217,15 @@ export default function LandingPage() {
           <h2 className="section-title center">{tx.why_title}</h2>
           <p className="section-sub center">{tx.why_sub}</p>
           <div className="why-grid">
-            {tx.why_cards.map((item, i) => (
+            {tx.why_cards.map((item, i) => {
+              const Icon = WHY_ICONS[i];
+              return (
               <div className="why-card" key={i}>
-                <div className="why-icon">{item.icon}</div>
+                <div className="why-icon"><Icon size={28} /></div>
                 <div><h3>{item.title}</h3><p>{item.desc}</p></div>
               </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -254,7 +262,7 @@ export default function LandingPage() {
         <p>{tx.cta_sub}</p>
         <div className="hero-btns" style={{ justifyContent: "center" }}>
           <Link to="/courses" className="btn-gold">{tx.cta_btn1}</Link>
-          <button className="btn-outline-pill">{tx.cta_btn2}</button>
+          <button className="btn-outline-pill"><IconMessageCircle size={18} /> {tx.cta_btn2}</button>
         </div>
       </section>
     </div>

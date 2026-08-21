@@ -1,5 +1,6 @@
 import "../styles/coaching.css";
 import { Link } from "react-router-dom";
+import { IconMessageCircle, IconSchool, IconBriefcase, IconMicrophone, IconClock, IconCheck } from "@tabler/icons-react";
 import { useLang } from "../context/LanguageContext";
 
 const TEXT = {
@@ -11,7 +12,7 @@ const TEXT = {
     title_highlight: "Interview Prep",
     sub: "One-on-one coaching to get you into your dream university or land your dream job. Real practice, real feedback, real results.",
     btn1: "Book a Session →",
-    btn2: "💬 Chat on LINE",
+    btn2: "Chat on LINE",
     stats: [
       { num: "98%", label: "Profit Margin" },
       { num: "500+", label: "Sessions Done" },
@@ -40,10 +41,10 @@ const TEXT = {
     cta_title: "Ready to Ace Your Interview?",
     cta_sub: "Book your first session today — starting at just ฿290",
     cta_btn1: "Book a Session →",
-    cta_btn2: "💬 Chat on LINE",
+    cta_btn2: "Chat on LINE",
     packages: [
       {
-        category: "University Interview Prep", icon: "🎓",
+        category: "University Interview Prep",
         items: [
           { name: "Basic Session", duration: "60 min", price: "฿490", desc: "Introduction and assessment", popular: false },
           { name: "Standard Package", duration: "3×90 min", price: "฿1,290", desc: "Full preparation with feedback", popular: false },
@@ -52,7 +53,7 @@ const TEXT = {
         ],
       },
       {
-        category: "Job Interview Prep", icon: "💼",
+        category: "Job Interview Prep",
         items: [
           { name: "Entry Level", duration: "90 min", price: "฿590", desc: "CV review + basic interview prep", popular: false },
           { name: "Standard Package", duration: "4×90 min", price: "฿1,690", desc: "Mock interviews + detailed feedback", popular: true },
@@ -61,7 +62,7 @@ const TEXT = {
         ],
       },
       {
-        category: "English Speaking Coaching", icon: "🗣️",
+        category: "English Speaking Coaching",
         items: [
           { name: "Speaking Confidence", duration: "60 min", price: "฿390", desc: "Overcome fear of speaking", popular: false },
           { name: "Business English Interview", duration: "90 min", price: "฿790", desc: "Corporate communication coaching", popular: false },
@@ -96,7 +97,7 @@ const TEXT = {
     title_highlight: "เตรียมสัมภาษณ์",
     sub: "โค้ชชิ่งแบบตัวต่อตัวเพื่อช่วยให้คุณเข้ามหาวิทยาลัยในฝันหรือได้งานในฝัน ฝึกจริง ได้รับ feedback จริง ผลลัพธ์จริง",
     btn1: "จองเซสชั่น →",
-    btn2: "💬 แชทบน LINE",
+    btn2: "แชทบน LINE",
     stats: [
       { num: "98%", label: "กำไร" },
       { num: "500+", label: "เซสชั่นที่ทำแล้ว" },
@@ -125,10 +126,10 @@ const TEXT = {
     cta_title: "พร้อมที่จะสัมภาษณ์ได้อย่างยอดเยี่ยม?",
     cta_sub: "จองเซสชั่นแรกวันนี้ — เริ่มต้นที่ ฿290",
     cta_btn1: "จองเซสชั่น →",
-    cta_btn2: "💬 แชทบน LINE",
+    cta_btn2: "แชทบน LINE",
     packages: [
       {
-        category: "เตรียมสัมภาษณ์มหาวิทยาลัย", icon: "🎓",
+        category: "เตรียมสัมภาษณ์มหาวิทยาลัย",
         items: [
           { name: "เซสชั่นพื้นฐาน", duration: "60 นาที", price: "฿490", desc: "ประเมินและเริ่มต้น", popular: false },
           { name: "แพ็คเกจมาตรฐาน", duration: "3×90 นาที", price: "฿1,290", desc: "เตรียมครบพร้อม feedback", popular: false },
@@ -137,7 +138,7 @@ const TEXT = {
         ],
       },
       {
-        category: "เตรียมสัมภาษณ์งาน", icon: "💼",
+        category: "เตรียมสัมภาษณ์งาน",
         items: [
           { name: "ระดับเริ่มต้น", duration: "90 นาที", price: "฿590", desc: "ตรวจ CV + เตรียมสัมภาษณ์เบื้องต้น", popular: false },
           { name: "แพ็คเกจมาตรฐาน", duration: "4×90 นาที", price: "฿1,690", desc: "Mock interview + feedback ละเอียด", popular: true },
@@ -146,7 +147,7 @@ const TEXT = {
         ],
       },
       {
-        category: "โค้ชการพูดภาษาอังกฤษ", icon: "🗣️",
+        category: "โค้ชการพูดภาษาอังกฤษ",
         items: [
           { name: "สร้างความมั่นใจในการพูด", duration: "60 นาที", price: "฿390", desc: "เอาชนะความกลัวการพูด", popular: false },
           { name: "Business English Interview", duration: "90 นาที", price: "฿790", desc: "โค้ชการสื่อสารในองค์กร", popular: false },
@@ -175,6 +176,8 @@ const TEXT = {
   },
 };
 
+const PKG_ICONS = [IconSchool, IconBriefcase, IconMicrophone];
+
 export default function CoachingPage() {
   const { lang } = useLang();
   const tx = TEXT[lang];
@@ -189,7 +192,7 @@ export default function CoachingPage() {
           <p>{tx.sub}</p>
           <div className="ch-hero-btns">
             <button className="btn-gold">{tx.btn1}</button>
-            <button className="btn-outline-pill">{tx.btn2}</button>
+            <button className="btn-outline-pill"><IconMessageCircle size={18} /> {tx.btn2}</button>
           </div>
           <div className="ch-hero-stats">
             {tx.stats.map((s, i) => (
@@ -222,7 +225,7 @@ export default function CoachingPage() {
         <section className={`ch-section${pi % 2 === 1 ? " alt" : ""}`} key={pi}>
           <div className="ch-inner">
             <div className="ch-pkg-header">
-              <span className="ch-pkg-icon">{pkg.icon}</span>
+              <span className="ch-pkg-icon">{(() => { const Icon = PKG_ICONS[pi]; return <Icon size={24} />; })()}</span>
               <div>
                 <h2 className="ch-title">{pkg.category}</h2>
                 <p className="ch-sub">{tx.pkg_sub}</p>
@@ -234,7 +237,7 @@ export default function CoachingPage() {
                   {item.popular && <div className="ch-popular-badge">{tx.popular}</div>}
                   <h3>{item.name}</h3>
                   <p className="ch-pkg-desc">{item.desc}</p>
-                  <div className="ch-pkg-duration">⏱ {item.duration}</div>
+                  <div className="ch-pkg-duration"><IconClock size={14} /> {item.duration}</div>
                   <div className="ch-pkg-price">{item.price}</div>
                   <button className={item.popular ? "btn-gold" : "btn-outline-pill"}>{tx.book_now}</button>
                 </div>
@@ -257,7 +260,7 @@ export default function CoachingPage() {
                 </div>
                 <ul>
                   {bundle.includes.map((item, j) => (
-                    <li key={j}><span>✓</span>{item}</li>
+                    <li key={j}><span><IconCheck size={14} /></span>{item}</li>
                   ))}
                 </ul>
                 <div className="ch-bundle-bottom">
@@ -316,7 +319,7 @@ export default function CoachingPage() {
         <p>{tx.cta_sub}</p>
         <div className="ch-cta-btns">
           <button className="btn-gold">{tx.cta_btn1}</button>
-          <button className="btn-outline-pill">{tx.cta_btn2}</button>
+          <button className="btn-outline-pill"><IconMessageCircle size={18} /> {tx.cta_btn2}</button>
         </div>
       </section>
     </div>

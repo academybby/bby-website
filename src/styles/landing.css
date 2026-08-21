@@ -179,6 +179,7 @@ body { background: var(--bg); transition: background 0.3s; }
   font-size: 0.95rem; font-weight: 500;
   cursor: pointer; font-family: inherit;
   transition: all 0.2s;
+  display: inline-flex; align-items: center; gap: 0.5rem;
 }
 .btn-outline-pill:hover { background: rgba(212,168,67,0.1); transform: translateY(-1px); }
 .scroll-mouse {
@@ -226,8 +227,9 @@ body { background: var(--bg); transition: background 0.3s; }
 }
 .eco-card:hover { border-color: rgba(212,168,67,0.45); transform: translateY(-3px); }
 .eco-icon {
-  font-size: 1.6rem; width: 54px; height: 54px;
+  width: 54px; height: 54px;
   background: rgba(212,168,67,0.12);
+  color: var(--gold);
   border-radius: 12px;
   display: flex; align-items: center; justify-content: center;
   margin-bottom: 1.25rem;
@@ -276,6 +278,7 @@ body { background: var(--bg); transition: background 0.3s; }
   display: flex; gap: 1rem; font-size: 0.76rem; color: var(--muted);
   padding-bottom: 0.9rem; border-bottom: 1px solid var(--card-border); margin-bottom: 0.9rem;
 }
+.course-meta span { display: inline-flex; align-items: center; gap: 0.3rem; }
 .course-foot { display: flex; align-items: center; justify-content: space-between; }
 .course-price { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; color: var(--gold); }
 .btn-gold-sm {
@@ -297,8 +300,9 @@ body { background: var(--bg); transition: background 0.3s; }
 }
 .why-card:hover { border-color: rgba(212,168,67,0.3); }
 .why-icon {
-  font-size: 1.4rem; width: 50px; height: 50px;
+  width: 50px; height: 50px;
   background: rgba(212,168,67,0.12);
+  color: var(--gold);
   border-radius: 12px;
   display: flex; align-items: center; justify-content: center; flex-shrink: 0;
 }

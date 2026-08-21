@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { IconMail, IconPhone, IconMapPin } from "@tabler/icons-react";
 import "../styles/footer.css";
 import { useLang } from "../context/LanguageContext";
 
@@ -53,9 +54,9 @@ export default function Footer() {
         </div>
         <div className="footer-col">
           <h4>{tx.contact_title}</h4>
-          <a href="mailto:hello@bbyacademy.com">✉ hello@bbyacademy.com</a>
-          <a href="tel:+6621234567">📞 +66 2 123 4567</a>
-          <a href="#">📍 Chiang Mai, Thailand</a>
+          <a href="mailto:hello@bbyacademy.com"><IconMail size={16} /> hello@bbyacademy.com</a>
+          <a href="tel:+6621234567"><IconPhone size={16} /> +66 2 123 4567</a>
+          <a href="#"><IconMapPin size={16} /> Chiang Mai, Thailand</a>
         </div>
       </div>
       <div className="footer-bottom">

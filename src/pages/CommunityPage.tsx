@@ -1,5 +1,6 @@
 import "../styles/community.css";
 import { Link } from "react-router-dom";
+import { IconMessageCircle, IconMicrophone, IconBooks, IconBuildingBank, IconCoffee, IconTarget, IconClock, IconUsers, IconCalendar, IconCheck, IconMapPin } from "@tabler/icons-react";
 import { useLang } from "../context/LanguageContext";
 
 const TEXT = {
@@ -11,7 +12,7 @@ const TEXT = {
     title_highlight: "Community",
     sub: "Practice with real people in real situations. Join our growing community of learners in Chiang Mai and online.",
     btn1: "Join Community →",
-    btn2: "💬 Chat on LINE",
+    btn2: "Chat on LINE",
     stats: [
       { num: "200+", label: "Active Members" },
       { num: "8x", label: "Sessions/Month" },
@@ -21,29 +22,29 @@ const TEXT = {
     online_title: "Online Community",
     online_sub: "Connect with learners anytime, anywhere",
     online_items: [
-      { icon: "💬", name: "Discord & LINE Group", price: "฿799/month", desc: "Join our active Discord server and LINE group. Daily conversations, resources, and support.", btn: "Join Now →" },
-      { icon: "🎙️", name: "Weekly Speaking Sessions", price: "฿199/session", desc: "Live speaking practice every week with native speakers and fellow learners.", btn: "Book Session →" },
-      { icon: "📚", name: "Study Groups", price: "฿590/month", desc: "Structured study groups for TOEIC, IELTS, HSK, and Coding. Learn together, grow faster.", btn: "Join Group →" },
+      { name: "Discord & LINE Group", price: "฿799/month", desc: "Join our active Discord server and LINE group. Daily conversations, resources, and support.", btn: "Join Now →" },
+      { name: "Weekly Speaking Sessions", price: "฿199/session", desc: "Live speaking practice every week with native speakers and fellow learners.", btn: "Book Session →" },
+      { name: "Study Groups", price: "฿590/month", desc: "Structured study groups for TOEIC, IELTS, HSK, and Coding. Learn together, grow faster.", btn: "Join Group →" },
     ],
     offline_title: "Offline Activities",
     offline_sub: "Real experiences in Chiang Mai",
     activities: [
       {
-        icon: "🏛️", name: "Language Tour",
+        name: "Language Tour",
         tagline: "Walk & Talk Around CMU",
         desc: "2-hour walking tour around Chiang Mai University. Practice English or Chinese while exploring the campus, temples, and local spots.",
         price: "฿350/person", duration: "2 hours", size: "8-10 people", frequency: "4x/month",
         highlights: ["Practice real conversations outdoors", "Explore CMU campus and surroundings", "Meet new friends and practice partners", "Led by native speakers"],
       },
       {
-        icon: "☕", name: "Coffee & Conversation",
+        name: "Coffee & Conversation",
         tagline: "Relax, Sip & Speak",
         desc: "Casual 1.5-hour language sessions at cozy Chiang Mai cafés. No pressure, just practice in a comfortable, social setting.",
         price: "฿150/person", duration: "1.5 hours", size: "6-8 people", frequency: "8x/month",
         highlights: ["Most affordable community activity", "Relaxed and fun atmosphere", "Different café every time", "Multiple language options"],
       },
       {
-        icon: "🎯", name: "Weekend Workshop",
+        name: "Weekend Workshop",
         tagline: "Intensive 3-Hour Practice",
         desc: "3-hour intensive workshops on specific topics: job interviews, presentations, TOEIC prep, or conversational fluency.",
         price: "฿690/person", duration: "3 hours", size: "10-15 people", frequency: "2x/month",
@@ -71,7 +72,7 @@ const TEXT = {
     cta_title: "Ready to Practice with Real People?",
     cta_sub: "Join hundreds of learners already improving their language skills with BBY Community",
     cta_btn1: "Join Community →",
-    cta_btn2: "💬 Chat on LINE",
+    cta_btn2: "Chat on LINE",
   },
   TH: {
     breadcrumb_home: "หน้าหลัก",
@@ -81,7 +82,7 @@ const TEXT = {
     title_highlight: "ภาษา",
     sub: "ฝึกกับคนจริงในสถานการณ์จริง เข้าร่วมชุมชนผู้เรียนที่กำลังเติบโตในเชียงใหม่และออนไลน์",
     btn1: "เข้าร่วมชุมชน →",
-    btn2: "💬 แชทบน LINE",
+    btn2: "แชทบน LINE",
     stats: [
       { num: "200+", label: "สมาชิกที่ active" },
       { num: "8x", label: "เซสชั่น/เดือน" },
@@ -91,29 +92,29 @@ const TEXT = {
     online_title: "ชุมชนออนไลน์",
     online_sub: "เชื่อมต่อกับผู้เรียนได้ทุกที่ทุกเวลา",
     online_items: [
-      { icon: "💬", name: "กลุ่ม Discord & LINE", price: "฿799/เดือน", desc: "เข้าร่วม Discord server และกลุ่ม LINE ที่คึกคัก บทสนทนาประจำวัน ทรัพยากร และการสนับสนุน", btn: "เข้าร่วมเลย →" },
-      { icon: "🎙️", name: "เซสชั่นพูดรายสัปดาห์", price: "฿199/เซสชั่น", desc: "ฝึกพูดสดทุกสัปดาห์กับเจ้าของภาษาและเพื่อนผู้เรียน", btn: "จองเซสชั่น →" },
-      { icon: "📚", name: "กลุ่มเรียน", price: "฿590/เดือน", desc: "กลุ่มเรียนที่มีโครงสร้างสำหรับ TOEIC, IELTS, HSK และ Coding เรียนด้วยกัน เติบโตเร็วขึ้น", btn: "เข้าร่วมกลุ่ม →" },
+      { name: "กลุ่ม Discord & LINE", price: "฿799/เดือน", desc: "เข้าร่วม Discord server และกลุ่ม LINE ที่คึกคัก บทสนทนาประจำวัน ทรัพยากร และการสนับสนุน", btn: "เข้าร่วมเลย →" },
+      { name: "เซสชั่นพูดรายสัปดาห์", price: "฿199/เซสชั่น", desc: "ฝึกพูดสดทุกสัปดาห์กับเจ้าของภาษาและเพื่อนผู้เรียน", btn: "จองเซสชั่น →" },
+      { name: "กลุ่มเรียน", price: "฿590/เดือน", desc: "กลุ่มเรียนที่มีโครงสร้างสำหรับ TOEIC, IELTS, HSK และ Coding เรียนด้วยกัน เติบโตเร็วขึ้น", btn: "เข้าร่วมกลุ่ม →" },
     ],
     offline_title: "กิจกรรมออฟไลน์",
     offline_sub: "ประสบการณ์จริงในเชียงใหม่",
     activities: [
       {
-        icon: "🏛️", name: "Language Tour",
+        name: "Language Tour",
         tagline: "เดินและพูดรอบ มช.",
         desc: "ทัวร์เดินเท้า 2 ชั่วโมงรอบมหาวิทยาลัยเชียงใหม่ ฝึกภาษาอังกฤษหรือจีนขณะสำรวจวิทยาเขต วัด และสถานที่ท้องถิ่น",
         price: "฿350/คน", duration: "2 ชั่วโมง", size: "8-10 คน", frequency: "4 ครั้ง/เดือน",
         highlights: ["ฝึกบทสนทนาจริงกลางแจ้ง", "สำรวจวิทยาเขต มช. และพื้นที่รอบข้าง", "พบเพื่อนใหม่และคู่ฝึก", "นำโดยเจ้าของภาษา"],
       },
       {
-        icon: "☕", name: "Coffee & Conversation",
+        name: "Coffee & Conversation",
         tagline: "ผ่อนคลาย จิบกาแฟ และพูดคุย",
         desc: "เซสชั่นภาษา 1.5 ชั่วโมงแบบสบายๆ ที่คาเฟ่แสนน่ารักในเชียงใหม่ ไม่มีแรงกดดัน แค่ฝึกในบรรยากาศสบายและเป็นกันเอง",
         price: "฿150/คน", duration: "1.5 ชั่วโมง", size: "6-8 คน", frequency: "8 ครั้ง/เดือน",
         highlights: ["กิจกรรมชุมชนที่ราคาถูกที่สุด", "บรรยากาศผ่อนคลายและสนุก", "คาเฟ่ใหม่ทุกครั้ง", "หลายตัวเลือกภาษา"],
       },
       {
-        icon: "🎯", name: "Weekend Workshop",
+        name: "Weekend Workshop",
         tagline: "ฝึกเข้มข้น 3 ชั่วโมง",
         desc: "Workshop เข้มข้น 3 ชั่วโมงในหัวข้อเฉพาะ: สัมภาษณ์งาน การนำเสนอ เตรียม TOEIC หรือความคล่องในบทสนทนา",
         price: "฿690/คน", duration: "3 ชั่วโมง", size: "10-15 คน", frequency: "2 ครั้ง/เดือน",
@@ -141,9 +142,12 @@ const TEXT = {
     cta_title: "พร้อมฝึกกับคนจริงแล้วหรือยัง?",
     cta_sub: "เข้าร่วมกับผู้เรียนหลายร้อยคนที่กำลังพัฒนาทักษะภาษากับ BBY Community",
     cta_btn1: "เข้าร่วมชุมชน →",
-    cta_btn2: "💬 แชทบน LINE",
+    cta_btn2: "แชทบน LINE",
   },
 };
+
+const ONLINE_ICONS = [IconMessageCircle, IconMicrophone, IconBooks];
+const ACTIVITY_ICONS = [IconBuildingBank, IconCoffee, IconTarget];
 
 export default function CommunityPage() {
   const { lang } = useLang();
@@ -160,7 +164,7 @@ export default function CommunityPage() {
           <p>{tx.sub}</p>
           <div className="cm-hero-btns">
             <button className="btn-gold">{tx.btn1}</button>
-            <button className="btn-outline-pill">{tx.btn2}</button>
+            <button className="btn-outline-pill"><IconMessageCircle size={18} /> {tx.btn2}</button>
           </div>
           <div className="cm-hero-stats">
             {tx.stats.map((s, i) => (
@@ -179,15 +183,18 @@ export default function CommunityPage() {
           <h2 className="cm-title center">{tx.online_title}</h2>
           <p className="cm-sub center">{tx.online_sub}</p>
           <div className="cm-online-grid">
-            {tx.online_items.map((item, i) => (
+            {tx.online_items.map((item, i) => {
+              const Icon = ONLINE_ICONS[i];
+              return (
               <div className="cm-online-card" key={i}>
-                <div className="cm-online-icon">{item.icon}</div>
+                <div className="cm-online-icon"><Icon size={26} /></div>
                 <h3>{item.name}</h3>
                 <p>{item.desc}</p>
                 <div className="cm-online-price">{item.price}</div>
                 <button className="btn-gold-sm">{item.btn}</button>
               </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -198,10 +205,12 @@ export default function CommunityPage() {
           <h2 className="cm-title center">{tx.offline_title}</h2>
           <p className="cm-sub center">{tx.offline_sub}</p>
           <div className="cm-activities">
-            {tx.activities.map((act, i) => (
+            {tx.activities.map((act, i) => {
+              const Icon = ACTIVITY_ICONS[i];
+              return (
               <div className="cm-activity" key={i}>
                 <div className="cm-activity-header">
-                  <div className="cm-activity-icon">{act.icon}</div>
+                  <div className="cm-activity-icon"><Icon size={24} /></div>
                   <div>
                     <h3>{act.name}</h3>
                     <div className="cm-activity-tagline">{act.tagline}</div>
@@ -210,18 +219,19 @@ export default function CommunityPage() {
                 </div>
                 <p>{act.desc}</p>
                 <div className="cm-activity-meta">
-                  <span>⏱ {act.duration}</span>
-                  <span>👥 {act.size}</span>
-                  <span>📅 {act.frequency}</span>
+                  <span><IconClock size={14} /> {act.duration}</span>
+                  <span><IconUsers size={14} /> {act.size}</span>
+                  <span><IconCalendar size={14} /> {act.frequency}</span>
                 </div>
                 <div className="cm-activity-highlights">
                   {act.highlights.map((h, j) => (
-                    <div key={j} className="cm-highlight"><span>✓</span>{h}</div>
+                    <div key={j} className="cm-highlight"><span><IconCheck size={14} /></span>{h}</div>
                   ))}
                 </div>
                 <button className="btn-gold-sm">{tx.btn1}</button>
               </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -240,7 +250,7 @@ export default function CommunityPage() {
                 </div>
                 <div className="cm-event-info">
                   <h3>{event.name}</h3>
-                  <span>📍 {event.location}</span>
+                  <span><IconMapPin size={14} /> {event.location}</span>
                 </div>
                 <div className="cm-event-right">
                   <div className="cm-event-spots">{event.spots}</div>
@@ -265,7 +275,7 @@ export default function CommunityPage() {
                 <div className="cm-plan-price">{plan.price}</div>
                 <ul>
                   {plan.features.map((f, j) => (
-                    <li key={j}><span>✓</span>{f}</li>
+                    <li key={j}><span><IconCheck size={14} /></span>{f}</li>
                   ))}
                 </ul>
                 <button className={plan.popular ? "btn-gold" : "btn-outline-pill"}>{tx.join_btn}</button>
@@ -282,7 +292,7 @@ export default function CommunityPage() {
         <p>{tx.cta_sub}</p>
         <div className="cm-cta-btns">
           <button className="btn-gold">{tx.cta_btn1}</button>
-          <button className="btn-outline-pill">{tx.cta_btn2}</button>
+          <button className="btn-outline-pill"><IconMessageCircle size={18} /> {tx.cta_btn2}</button>
         </div>
       </section>
     </div>

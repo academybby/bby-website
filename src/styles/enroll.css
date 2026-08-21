@@ -122,6 +122,7 @@
 .enroll-summary-img { width: 100%; height: 140px; object-fit: cover; border-radius: 10px; margin-bottom: 1rem; }
 .enroll-summary-title { font-size: 1rem; font-weight: 700; color: var(--text, #F0EDE4); margin-bottom: 0.6rem; line-height: 1.4; }
 .enroll-summary-meta { display: flex; gap: 1rem; font-size: 0.78rem; color: var(--muted, #7A7468); margin-bottom: 1rem; }
+.enroll-summary-meta span { display: inline-flex; align-items: center; gap: 0.3rem; }
 .enroll-divider { border: none; border-top: 1px solid rgba(255,255,255,0.07); margin: 1rem 0; }
 .enroll-summary-row { display: flex; justify-content: space-between; align-items: center; font-size: 0.86rem; color: var(--muted, #7A7468); }
 .enroll-summary-row strong { color: var(--text, #F0EDE4); }

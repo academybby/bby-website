@@ -1,6 +1,7 @@
 import "../styles/courses.css";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { IconSearch, IconClock, IconFolder, IconMessageCircle, IconPhone } from "@tabler/icons-react";
 import { ALL_COURSES } from "../data/courses-data";
 import { useLang } from "../context/LanguageContext";
 
@@ -28,8 +29,8 @@ const TEXT = {
     clear_filters: "Clear Filters",
     cta_title: "Not Sure Which Course?",
     cta_sub: "Chat with us and we'll recommend the perfect course for your goals",
-    cta_btn1: "💬 Chat on LINE",
-    cta_btn2: "📞 Call Us",
+    cta_btn1: "Chat on LINE",
+    cta_btn2: "Call Us",
   },
   TH: {
     breadcrumb_home: "หน้าหลัก",
@@ -54,8 +55,8 @@ const TEXT = {
     clear_filters: "ล้างตัวกรอง",
     cta_title: "ไม่แน่ใจว่าจะเลือกหลักสูตรไหน?",
     cta_sub: "แชทกับเราแล้วเราจะแนะนำหลักสูตรที่เหมาะกับเป้าหมายของคุณ",
-    cta_btn1: "💬 แชทบน LINE",
-    cta_btn2: "📞 โทรหาเรา",
+    cta_btn1: "แชทบน LINE",
+    cta_btn2: "โทรหาเรา",
   },
 };
 
@@ -99,7 +100,7 @@ export default function CoursesPage() {
       <section className="cp-filters-bar">
         <div className="cp-filters-inner">
           <div className="cp-search">
-            <span>🔍</span>
+            <span><IconSearch size={16} /></span>
             <input
               type="text"
               placeholder={tx.search_placeholder}
@@ -137,8 +138,8 @@ export default function CoursesPage() {
                   <h3>{course.title}</h3>
                   <p>{course.desc}</p>
                   <div className="cp-card-meta">
-                    <span>⏱ {course.weeks} {tx.weeks}</span>
-                    {course.sub && <span>📂 {course.sub}</span>}
+                    <span><IconClock size={14} /> {course.weeks} {tx.weeks}</span>
+                    {course.sub && <span><IconFolder size={14} /> {course.sub}</span>}
                   </div>
                   <div className="cp-card-foot">
                     <span className="cp-price">{course.price}</span>
@@ -150,7 +151,7 @@ export default function CoursesPage() {
           </div>
           {filtered.length === 0 && (
             <div className="cp-empty">
-              <div>🔍</div>
+              <div><IconSearch size={32} /></div>
               <p>{tx.no_courses}</p>
               <button className="btn-gold" onClick={() => { setActiveCat(0); setActiveLevel(0); setSearch(""); }}>{tx.clear_filters}</button>
             </div>
@@ -163,8 +164,8 @@ export default function CoursesPage() {
         <h2>{tx.cta_title}</h2>
         <p>{tx.cta_sub}</p>
         <div className="cp-cta-btns">
-          <button className="btn-gold">{tx.cta_btn1}</button>
-          <button className="btn-outline-pill">{tx.cta_btn2}</button>
+          <button className="btn-gold"><IconMessageCircle size={18} /> {tx.cta_btn1}</button>
+          <button className="btn-outline-pill"><IconPhone size={18} /> {tx.cta_btn2}</button>
         </div>
       </section>
     </div>

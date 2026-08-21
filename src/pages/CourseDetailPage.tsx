@@ -1,5 +1,6 @@
 import "../styles/course-detail.css";
 import { useParams, Link } from "react-router-dom";
+import { IconMessageCircle, IconCheck, IconStarFilled, IconUsers, IconVideo, IconClock, IconWorld, IconSchool } from "@tabler/icons-react";
 import { ALL_COURSES } from "../data/courses-data";
 import { useLang } from "../context/LanguageContext";
 
@@ -7,8 +8,8 @@ const TEXT = {
   EN: {
     home: "Home", courses: "Courses",
     enroll_btn: "Enroll Now →",
-    line_btn: "💬 Chat on LINE",
-    features: ["✅ Lifetime access", "✅ Certificate included", "✅ Mobile friendly", "✅ Thai support"],
+    line_btn: "Chat on LINE",
+    features: ["Lifetime access", "Certificate included", "Mobile friendly", "Thai support"],
     learn_title: "What You'll Learn",
     curriculum_title: "Course Curriculum",
     instructor_title: "Your Instructor",
@@ -23,7 +24,7 @@ const TEXT = {
     cta_join: "Join",
     cta_suffix: "students already learning with BBY Academy",
     cta_btn1: "Enroll Now →",
-    cta_btn2: "💬 Ask on LINE",
+    cta_btn2: "Ask on LINE",
     lessons_label: "lessons",
     weeks_label: "weeks",
     students_label: "students",
@@ -33,8 +34,8 @@ const TEXT = {
   TH: {
     home: "หน้าหลัก", courses: "หลักสูตร",
     enroll_btn: "สมัครเรียนเลย →",
-    line_btn: "💬 แชทบน LINE",
-    features: ["✅ เข้าถึงตลอดชีพ", "✅ มีใบรับรอง", "✅ รองรับมือถือ", "✅ รองรับภาษาไทย"],
+    line_btn: "แชทบน LINE",
+    features: ["เข้าถึงตลอดชีพ", "มีใบรับรอง", "รองรับมือถือ", "รองรับภาษาไทย"],
     learn_title: "สิ่งที่คุณจะได้เรียน",
     curriculum_title: "หลักสูตรการเรียน",
     instructor_title: "ผู้สอนของคุณ",
@@ -49,7 +50,7 @@ const TEXT = {
     cta_join: "เข้าร่วมกับ",
     cta_suffix: "นักเรียนที่กำลังเรียนกับ BBY Academy",
     cta_btn1: "สมัครเรียนเลย →",
-    cta_btn2: "💬 สอบถามบน LINE",
+    cta_btn2: "สอบถามบน LINE",
     lessons_label: "บทเรียน",
     weeks_label: "สัปดาห์",
     students_label: "นักเรียน",
@@ -89,11 +90,11 @@ export default function CourseDetailPage() {
             <h1>{course.title}</h1>
             <p>{course.desc}</p>
             <div className="cdp-meta-row">
-              <span>⭐ {course.rating} ({course.reviewCount} {tx.reviews_suffix})</span>
-              <span>👥 {course.students} {tx.students_label}</span>
-              <span>📹 {course.lessons} {tx.lessons_label}</span>
-              <span>⏱ {course.weeks} {tx.weeks_label}</span>
-              <span>🌐 {course.language}</span>
+              <span><IconStarFilled size={14} /> {course.rating} ({course.reviewCount} {tx.reviews_suffix})</span>
+              <span><IconUsers size={14} /> {course.students} {tx.students_label}</span>
+              <span><IconVideo size={14} /> {course.lessons} {tx.lessons_label}</span>
+              <span><IconClock size={14} /> {course.weeks} {tx.weeks_label}</span>
+              <span><IconWorld size={14} /> {course.language}</span>
             </div>
           </div>
 
@@ -107,9 +108,9 @@ export default function CourseDetailPage() {
                 <span className="cdp-discount">{tx.discount}</span>
               </div>
               <Link to={`/courses/${course.id}/enroll`} className="btn-gold cdp-enroll-btn">{tx.enroll_btn}</Link>
-              <button className="btn-outline-pill cdp-line-btn">{tx.line_btn}</button>
+              <button className="btn-outline-pill cdp-line-btn"><IconMessageCircle size={18} /> {tx.line_btn}</button>
               <div className="cdp-card-features">
-                {tx.features.map((f, i) => <div key={i} className="cdp-feature">{f}</div>)}
+                {tx.features.map((f, i) => <div key={i} className="cdp-feature"><IconCheck size={16} /> {f}</div>)}
               </div>
             </div>
           </div>
@@ -125,7 +126,7 @@ export default function CourseDetailPage() {
             <div className="cdp-highlights-grid">
               {course.highlights.map((h, i) => (
                 <div className="cdp-highlight" key={i}>
-                  <span className="cdp-check">✓</span><span>{h}</span>
+                  <span className="cdp-check"><IconCheck size={14} /></span><span>{h}</span>
                 </div>
               ))}
             </div>
@@ -161,9 +162,9 @@ export default function CourseDetailPage() {
                 <h3>{course.instructor.name}</h3>
                 <p className="cdp-instructor-title">{course.instructor.title}</p>
                 <div className="cdp-instructor-stats">
-                  <span>⭐ {course.instructor.rating}</span>
-                  <span>👥 {course.instructor.students}+ {tx.students_label}</span>
-                  <span>🎓 {course.instructor.exp} {tx.experience_label}</span>
+                  <span><IconStarFilled size={14} /> {course.instructor.rating}</span>
+                  <span><IconUsers size={14} /> {course.instructor.students}+ {tx.students_label}</span>
+                  <span><IconSchool size={14} /> {course.instructor.exp} {tx.experience_label}</span>
                 </div>
                 <p className="cdp-instructor-bio">{course.instructor.bio}</p>
               </div>
@@ -212,7 +213,7 @@ export default function CourseDetailPage() {
                 <div className="cdp-plan-price">{plan.price}</div>
                 <ul>
                   {plan.features.map((f, j) => (
-                    <li key={j}><span>✓</span>{f}</li>
+                    <li key={j}><span><IconCheck size={14} /></span>{f}</li>
                   ))}
                 </ul>
                 <Link
@@ -233,7 +234,7 @@ export default function CourseDetailPage() {
         <p>{tx.cta_join} {course.students}+ {tx.cta_suffix}</p>
         <div className="cdp-cta-btns">
           <Link to={`/courses/${course.id}/enroll`} className="btn-gold">{tx.cta_btn1}</Link>
-          <button className="btn-outline-pill">{tx.cta_btn2}</button>
+          <button className="btn-outline-pill"><IconMessageCircle size={18} /> {tx.cta_btn2}</button>
         </div>
       </section>
     </div>

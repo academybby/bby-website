@@ -63,6 +63,7 @@
   transition: border-color 0.2s;
 }
 .cp-search:focus-within { border-color: rgba(212,168,67,0.4); }
+.cp-search > span { display: flex; color: var(--muted, #7A7468); }
 .cp-search input {
   background: none; border: none; outline: none;
   color: var(--text, #F0EDE4); font-size: 0.88rem;
@@ -133,6 +134,7 @@
   border-bottom: 1px solid rgba(255,255,255,0.06);
   margin-bottom: 0.9rem;
 }
+.cp-card-meta span { display: inline-flex; align-items: center; gap: 0.3rem; }
 .cp-card-foot { display: flex; align-items: center; justify-content: space-between; }
 .cp-price {
   font-family: 'Playfair Display', serif;
@@ -146,6 +148,7 @@
   border-radius: 999px; font-size: 0.95rem;
   font-weight: 600; cursor: pointer; font-family: inherit;
   transition: background 0.2s, transform 0.15s;
+  display: inline-flex; align-items: center; gap: 0.5rem;
 }
 .btn-gold:hover { background: #F0C85A; transform: translateY(-1px); }
 .btn-gold-sm {
@@ -162,6 +165,7 @@
   padding: 0.85rem 2rem; border-radius: 999px;
   font-size: 0.95rem; font-weight: 500;
   cursor: pointer; font-family: inherit; transition: all 0.2s;
+  display: inline-flex; align-items: center; gap: 0.5rem;
 }
 .btn-outline-pill:hover { background: rgba(212,168,67,0.1); }
 
@@ -170,7 +174,7 @@
   text-align: center; padding: 5rem 2rem;
   color: var(--muted, #7A7468);
 }
-.cp-empty div { font-size: 3rem; margin-bottom: 1rem; }
+.cp-empty div { display: flex; justify-content: center; margin-bottom: 1rem; }
 .cp-empty p { font-size: 1rem; margin-bottom: 1.5rem; }
 
 /* ── CTA ── */
