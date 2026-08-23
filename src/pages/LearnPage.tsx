@@ -77,7 +77,7 @@ function LearnPageForCourse({ id }: { id?: string }) {
   const { lang } = useLang();
   const tx = TEXT[lang];
   const course = ALL_COURSES.find(c => c.id === Number(id)) || ALL_COURSES[0];
-  const { email, setEmail, checkEnrolled, isEnrolledLocally } = useEnrollment();
+  const { email, setEmail, checkEnrolled, isEnrolledLocally, markEnrolledLocally } = useEnrollment();
 
   const [access, setAccess] = useState<AccessStatus>("checking");
   const [emailInput, setEmailInput] = useState(email);
@@ -105,6 +105,14 @@ function LearnPageForCourse({ id }: { id?: string }) {
   const handleCheckAccess = (e: React.FormEvent) => {
     e.preventDefault();
     setEmail(emailInput);
+  };
+
+  // Dev-only shortcut so the lesson view can be inspected locally without a real
+  // enrollment or `vercel dev` — import.meta.env.DEV is false in a production
+  // build, so this button and branch never ship.
+  const handleDevPreview = () => {
+    markEnrolledLocally(course.id);
+    setAccess("unlocked");
   };
 
   // Flatten curriculum into individual lessons (mock structure)
@@ -156,6 +164,11 @@ function LearnPageForCourse({ id }: { id?: string }) {
           </form>
           <p className="learn-locked-login">{tx.have_account} <Link to="/login" state={{ from: `/courses/${course.id}/learn` }}>{tx.login_link}</Link></p>
           <Link to={`/courses/${course.id}/enroll`} className="btn-gold">{tx.go_enroll}</Link>
+          {import.meta.env.DEV && (
+            <button type="button" className="learn-locked-dev-preview" onClick={handleDevPreview}>
+              Preview lesson (dev only)
+            </button>
+          )}
         </div>
       </div>
     );

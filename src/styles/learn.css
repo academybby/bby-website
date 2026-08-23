@@ -23,6 +23,14 @@
 .learn-locked-login { font-size: 0.82rem; color: var(--muted, #7A7468); margin-bottom: 1.25rem; }
 .learn-locked-login a { color: #D4A843; text-decoration: none; }
 .learn-locked-login a:hover { text-decoration: underline; }
+.learn-locked-dev-preview {
+  display: block; margin: 1rem auto 0;
+  background: none; border: 1px dashed rgba(255,255,255,0.2);
+  color: var(--muted, #7A7468); font-size: 0.75rem;
+  padding: 0.4rem 0.9rem; border-radius: 999px; cursor: pointer;
+  font-family: inherit;
+}
+.learn-locked-dev-preview:hover { border-color: #D4A843; color: #D4A843; }
 
 /* ── Top bar ── */
 .learn-topbar {
