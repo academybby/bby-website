@@ -33,7 +33,7 @@
   display: flex; gap: 3rem;
   padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.07);
 }
-.cm-stat-num { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; color: #D4A843; }
+.cm-stat-num { font-family: 'Playfair Display', serif; font-variant-numeric: lining-nums tabular-nums; font-size: 2rem; font-weight: 700; color: #D4A843; }
 .cm-stat-label { font-size: 0.78rem; color: var(--muted, #7A7468); margin-top: 2px; }
 
 /* ── Shared ── */
@@ -58,7 +58,7 @@
 .cm-online-icon { color: #D4A843; width: 54px; height: 54px; background: rgba(212,168,67,0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; }
 .cm-online-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--text, #F0EDE4); }
 .cm-online-card p { font-size: 0.85rem; color: var(--muted, #7A7468); line-height: 1.65; flex: 1; }
-.cm-online-price { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; color: #D4A843; }
+.cm-online-price { font-family: 'DM Sans', sans-serif; font-variant-numeric: lining-nums tabular-nums; font-size: 1.2rem; font-weight: 700; color: #D4A843; }
 
 /* ── Activities ── */
 .cm-activities { display: flex; flex-direction: column; gap: 1.5rem; }
@@ -73,7 +73,7 @@
 .cm-activity-icon { color: #D4A843; width: 54px; height: 54px; background: rgba(212,168,67,0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .cm-activity-header h3 { font-size: 1.15rem; font-weight: 700; color: var(--text, #F0EDE4); margin-bottom: 0.2rem; }
 .cm-activity-tagline { font-size: 0.82rem; color: #D4A843; }
-.cm-activity-price { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: #D4A843; margin-left: auto; white-space: nowrap; }
+.cm-activity-price { font-family: 'DM Sans', sans-serif; font-variant-numeric: lining-nums tabular-nums; font-size: 1.3rem; font-weight: 700; color: #D4A843; margin-left: auto; white-space: nowrap; }
 .cm-activity > p { font-size: 0.88rem; color: var(--muted, #7A7468); line-height: 1.7; margin-bottom: 1rem; }
 .cm-activity-meta { display: flex; gap: 1.5rem; font-size: 0.8rem; color: var(--muted, #7A7468); margin-bottom: 1rem; }
 .cm-activity-meta span { display: inline-flex; align-items: center; gap: 0.3rem; }
@@ -122,7 +122,7 @@
   padding: 0.2rem 1rem; border-radius: 999px; white-space: nowrap;
 }
 .cm-plan h3 { font-size: 0.95rem; font-weight: 600; color: var(--muted, #7A7468); text-transform: uppercase; letter-spacing: 0.08em; }
-.cm-plan-price { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: #D4A843; }
+.cm-plan-price { font-family: 'DM Sans', sans-serif; font-variant-numeric: lining-nums tabular-nums; font-size: 1.8rem; font-weight: 700; color: #D4A843; }
 .cm-plan ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; flex: 1; }
 .cm-plan ul li { display: flex; align-items: center; gap: 0.6rem; font-size: 0.84rem; color: var(--muted, #7A7468); }
 .cm-plan ul li span { color: #D4A843; display: inline-flex; align-items: center; }

@@ -81,7 +81,8 @@
   margin-bottom: 1.25rem;
 }
 .cdp-price {
-  font-family: 'Playfair Display', serif;
+  font-family: 'DM Sans', sans-serif;
+  font-variant-numeric: lining-nums tabular-nums;
   font-size: 1.8rem; font-weight: 700; color: #D4A843;
 }
 .cdp-original-price {
@@ -190,6 +191,7 @@
 }
 .cdp-big-rating {
   font-family: 'Playfair Display', serif;
+  font-variant-numeric: lining-nums tabular-nums;
   font-size: 4rem; font-weight: 700; color: #D4A843; line-height: 1;
 }
 .cdp-stars { color: #D4A843; font-size: 1.25rem; letter-spacing: 2px; }
@@ -252,7 +254,8 @@
 }
 .cdp-plan h3 { font-size: 1rem; font-weight: 600; color: var(--muted, #7A7468); margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; }
 .cdp-plan-price {
-  font-family: 'Playfair Display', serif;
+  font-family: 'DM Sans', sans-serif;
+  font-variant-numeric: lining-nums tabular-nums;
   font-size: 2rem; font-weight: 700; color: #D4A843;
   margin-bottom: 1.5rem;
 }

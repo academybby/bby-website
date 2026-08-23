@@ -5,7 +5,9 @@
   --bg2: #131210;
   --bg3: #1A1816;
   --text: #F0EDE4;
-  --muted: #7A7468;
+  /* Lighter than the light-theme value on purpose — #7A7468 only reaches ~3.8:1
+     against this theme's dark backgrounds, below WCAG AA's 4.5:1 for normal text. */
+  --muted: #9C9488;
   --card-bg: #1A1816;
   --card-border: rgba(255,255,255,0.07);
   --border: rgba(212,168,67,0.15);

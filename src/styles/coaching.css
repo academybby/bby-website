@@ -41,6 +41,7 @@
 }
 .ch-stat-num {
   font-family: 'Playfair Display', serif;
+  font-variant-numeric: lining-nums tabular-nums;
   font-size: 2rem; font-weight: 700; color: #D4A843;
 }
 .ch-stat-label { font-size: 0.78rem; color: var(--muted, #7A7468); margin-top: 2px; }
@@ -69,6 +70,7 @@
 .ch-step:hover { border-color: rgba(212,168,67,0.3); }
 .ch-step-num {
   font-family: 'Playfair Display', serif;
+  font-variant-numeric: lining-nums tabular-nums;
   font-size: 2.5rem; font-weight: 700;
   color: rgba(212,168,67,0.2); line-height: 1;
   margin-bottom: 1rem;
@@ -102,7 +104,11 @@
 .ch-pkg-desc { font-size: 0.82rem; color: var(--muted, #7A7468); line-height: 1.5; flex: 1; }
 .ch-pkg-duration { display: flex; align-items: center; gap: 0.3rem; font-size: 0.78rem; color: var(--muted, #7A7468); }
 .ch-pkg-price {
-  font-family: 'Playfair Display', serif;
+  /* Not Playfair Display: it has no glyph for the Baht sign (฿), so the symbol
+     would silently fall back to a different, mismatched serif font next to
+     Playfair-rendered digits. */
+  font-family: 'DM Sans', sans-serif;
+  font-variant-numeric: lining-nums tabular-nums;
   font-size: 1.4rem; font-weight: 700; color: #D4A843;
 }
 
@@ -127,7 +133,8 @@
 .ch-bundle ul li span { color: #D4A843; display: inline-flex; align-items: center; }
 .ch-bundle-bottom { display: flex; align-items: center; justify-content: space-between; }
 .ch-bundle-price {
-  font-family: 'Playfair Display', serif;
+  font-family: 'DM Sans', sans-serif;
+  font-variant-numeric: lining-nums tabular-nums;
   font-size: 1.4rem; font-weight: 700; color: #D4A843;
 }
 
@@ -144,7 +151,8 @@
 .ch-addon h3 { font-size: 0.95rem; font-weight: 600; color: var(--text, #F0EDE4); margin-bottom: 0.25rem; }
 .ch-addon p { font-size: 0.82rem; color: var(--muted, #7A7468); }
 .ch-addon-price {
-  font-family: 'Playfair Display', serif;
+  font-family: 'DM Sans', sans-serif;
+  font-variant-numeric: lining-nums tabular-nums;
   font-size: 1.1rem; font-weight: 700; color: #D4A843;
   white-space: nowrap; margin-left: 2rem;
 }

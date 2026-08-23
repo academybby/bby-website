@@ -118,7 +118,7 @@
 .pay-summary-row { display: flex; justify-content: space-between; align-items: center; font-size: 0.86rem; color: var(--muted, #7A7468); }
 .pay-summary-row strong { color: var(--text, #F0EDE4); }
 .pay-summary-total { display: flex; justify-content: space-between; align-items: center; font-size: 0.95rem; font-weight: 600; color: var(--text, #F0EDE4); }
-.pay-total-price { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: #D4A843; }
+.pay-total-price { font-family: 'DM Sans', sans-serif; font-variant-numeric: lining-nums tabular-nums; font-size: 1.5rem; font-weight: 700; color: #D4A843; }
 
 /* ── Success ── */
 .pay-success {

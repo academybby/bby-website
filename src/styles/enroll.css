@@ -84,7 +84,7 @@
 .enroll-plan-info { flex: 1; }
 .enroll-plan-name { font-size: 0.92rem; font-weight: 600; color: var(--text, #F0EDE4); }
 .enroll-plan-features { font-size: 0.76rem; color: var(--muted, #7A7468); margin-top: 2px; }
-.enroll-plan-price { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: #D4A843; white-space: nowrap; }
+.enroll-plan-price { font-family: 'DM Sans', sans-serif; font-variant-numeric: lining-nums tabular-nums; font-size: 1.1rem; font-weight: 700; color: #D4A843; white-space: nowrap; }
 
 /* Payment Options */
 .enroll-payment-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
@@ -127,7 +127,7 @@
 .enroll-summary-row { display: flex; justify-content: space-between; align-items: center; font-size: 0.86rem; color: var(--muted, #7A7468); }
 .enroll-summary-row strong { color: var(--text, #F0EDE4); }
 .enroll-summary-total { display: flex; justify-content: space-between; align-items: center; font-size: 0.95rem; font-weight: 600; color: var(--text, #F0EDE4); }
-.enroll-total-price { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: #D4A843; }
+.enroll-total-price { font-family: 'DM Sans', sans-serif; font-variant-numeric: lining-nums tabular-nums; font-size: 1.5rem; font-weight: 700; color: #D4A843; }
 
 /* ── Success ── */
 .enroll-success {

@@ -280,7 +280,7 @@ body { background: var(--bg); transition: background 0.3s; }
 }
 .course-meta span { display: inline-flex; align-items: center; gap: 0.3rem; }
 .course-foot { display: flex; align-items: center; justify-content: space-between; }
-.course-price { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; color: var(--gold); }
+.course-price { font-family: 'DM Sans', sans-serif; font-variant-numeric: lining-nums tabular-nums; font-size: 1.2rem; font-weight: 700; color: var(--gold); }
 .btn-gold-sm {
   background: var(--gold); color: #0D0C0A;
   border: none; padding: 0.45rem 1.1rem;
@@ -318,7 +318,7 @@ body { background: var(--bg); transition: background 0.3s; }
   transition: border-color 0.2s, transform 0.2s, background 0.3s;
 }
 .stat-card:hover { border-color: rgba(212,168,67,0.4); transform: translateY(-3px); }
-.stat-num { font-family: 'Playfair Display', serif; font-size: 2.8rem; font-weight: 700; color: var(--gold); margin-bottom: 0.5rem; }
+.stat-num { font-family: 'Playfair Display', serif; font-variant-numeric: lining-nums tabular-nums; font-size: 2.8rem; font-weight: 700; color: var(--gold); margin-bottom: 0.5rem; }
 .stat-label { font-size: 0.88rem; color: var(--muted); }
 
 /* ── Testimonials ── */

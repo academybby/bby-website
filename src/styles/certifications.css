@@ -33,7 +33,7 @@
   display: flex; gap: 3rem;
   padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.07);
 }
-.cert-stat-num { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; color: #D4A843; }
+.cert-stat-num { font-family: 'Playfair Display', serif; font-variant-numeric: lining-nums tabular-nums; font-size: 2rem; font-weight: 700; color: #D4A843; }
 .cert-stat-label { font-size: 0.78rem; color: var(--muted, #7A7468); margin-top: 2px; }
 
 /* ── Shared ── */
@@ -56,6 +56,7 @@
 .cert-step:hover { border-color: rgba(212,168,67,0.3); }
 .cert-step-num {
   font-family: 'Playfair Display', serif;
+  font-variant-numeric: lining-nums tabular-nums;
   font-size: 2.5rem; font-weight: 700;
   color: rgba(212,168,67,0.2); line-height: 1; margin-bottom: 1rem;
 }
@@ -88,7 +89,7 @@
 }
 .cert-category { font-size: 0.72rem; color: #D4A843; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.25rem; font-weight: 600; }
 .cert-card-header h3 { font-size: 1rem; font-weight: 700; color: var(--text, #F0EDE4); line-height: 1.3; }
-.cert-price { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: #D4A843; margin-left: auto; white-space: nowrap; }
+.cert-price { font-family: 'DM Sans', sans-serif; font-variant-numeric: lining-nums tabular-nums; font-size: 1.4rem; font-weight: 700; color: #D4A843; margin-left: auto; white-space: nowrap; }
 .cert-card > p { font-size: 0.85rem; color: var(--muted, #7A7468); line-height: 1.65; }
 .cert-meta { display: flex; gap: 1.5rem; font-size: 0.78rem; color: var(--muted, #7A7468); }
 .cert-meta span { display: inline-flex; align-items: center; gap: 0.3rem; }
@@ -112,7 +113,7 @@
 .cert-addon:hover { border-color: rgba(212,168,67,0.25); }
 .cert-addon h3 { font-size: 0.95rem; font-weight: 600; color: var(--text, #F0EDE4); margin-bottom: 0.25rem; }
 .cert-addon p { font-size: 0.82rem; color: var(--muted, #7A7468); }
-.cert-addon-price { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: #D4A843; white-space: nowrap; margin-left: 2rem; }
+.cert-addon-price { font-family: 'DM Sans', sans-serif; font-variant-numeric: lining-nums tabular-nums; font-size: 1.1rem; font-weight: 700; color: #D4A843; white-space: nowrap; margin-left: 2rem; }
 
 /* ── CTA ── */
 .cert-cta {
